@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Java面试题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="继承 访问权限 接口与抽象类 super 重写与重载  抽象类抽象类 和抽象方法 需要用abstract 关键字声明。 抽象类一般包含抽象方法。抽象类和一般类的区别在于抽象类不能被实例化。 1234567891011121314151617181920212223public abstract class AbstractClassExample &amp;#123;    protected int x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试题">
+<meta property="og:url" content="http://example.com/2022/11/13/Java/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="继承 访问权限 接口与抽象类 super 重写与重载  抽象类抽象类 和抽象方法 需要用abstract 关键字声明。 抽象类一般包含抽象方法。抽象类和一般类的区别在于抽象类不能被实例化。 1234567891011121314151617181920212223public abstract class AbstractClassExample &amp;#123;    protected int x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-13T08:14:44.000Z">
+<meta property="article:modified_time" content="2022-11-13T08:57:50.016Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Java/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T08:14:44.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Java面试题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>访问权限</li>
+<li>接口与抽象类</li>
+<li>super</li>
+<li>重写与重载</li>
+</ul>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>抽象类 和抽象方法 需要用abstract 关键字声明。 抽象类一般包含抽象方法。<br>抽象类和一般类的区别在于抽象类不能被实例化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractClassExample</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> y;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func2</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AbstractExtendClassExample</span> <span class="keyword">extends</span> <span class="title class_">AbstractClassExample</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// AbstractClassExample ac1 = new AbstractClassExample(); // &#x27;AbstractClassExample&#x27; is abstract; cannot be instantiated</span></span><br><span class="line"><span class="type">AbstractClassExample</span> <span class="variable">ac2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AbstractExtendClassExample</span>();</span><br><span class="line">ac2.func1();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用抽象类：</p>
+<ol>
+<li>需要多个相关的类中共享代码。</li>
+<li>需要能控制继承来的成员的访问权限，并不都是public。</li>
+<li>需要继承非静态和非常量字段。</li>
+</ol>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是完全抽象的类，在 Java8之前， 就是不能有任何的方法实现<br>在Java 8开始，接口可以拥有默认的方法实现，因为不支持默认方法的接口维护成本太高了。</p>
+<p>接口的成员（字段+方法）都是默认public，并且不允许定义为Private 或 protected。</p>
+<p>接口的字段默认都是 static 和 final 的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">InterfaceExample</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">func2</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line">    <span class="comment">// int y;               // Variable &#x27;y&#x27; might not have been initialized</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="variable">z</span> <span class="operator">=</span> <span class="number">0</span>;       <span class="comment">// Modifier &#x27;public&#x27; is redundant for interface fields</span></span><br><span class="line">    <span class="comment">// private int k = 0;   // Modifier &#x27;private&#x27; not allowed here</span></span><br><span class="line">    <span class="comment">// protected int l = 0; // Modifier &#x27;protected&#x27; not allowed here</span></span><br><span class="line">    <span class="comment">// private void fun3(); // Modifier &#x27;private&#x27; not allowed here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceImplementExample</span> <span class="keyword">implements</span> <span class="title class_">InterfaceExample</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// InterfaceExample ie1 = new InterfaceExample(); // &#x27;InterfaceExample&#x27; is abstract; cannot be instantiated</span></span><br><span class="line"><span class="type">InterfaceExample</span> <span class="variable">ie2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InterfaceImplementExample</span>();</span><br><span class="line">ie2.func1();</span><br><span class="line">System.out.println(InterfaceExample.x);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用接口</p>
+<ol>
+<li>需要让不相关的类都实现一个方法，例如不相关的类都实现Comparable接口中的compareTo()；</li>
+<li>想要确定特定数据类型的行为，但是不关心谁实现这个行为。 </li>
+<li>需要使用多重继承。</li>
+</ol>
+<h2 id="抽象类与接口区别"><a href="#抽象类与接口区别" class="headerlink" title="抽象类与接口区别"></a>抽象类与接口区别</h2><p>使用上来说，一个类可以实现多个接口，但是不能继承多个抽象类。<br>接口的字段 只能是static 和final类型，抽象类没有限制。<br>接口成员只能是public，抽象类成员可以有多种访问权限。</p>
+<p>选择：<br>很多时候，接口优于抽象类，因为接口没有抽象类严格的类层级结构要求，可以灵活为一个类添加行为。 并且从Java8开始，接口也可以有默认的方法实现，使得修改接口的成本很低。</p>
+<h2 id="重载和重写"><a href="#重载和重写" class="headerlink" title="重载和重写"></a>重载和重写</h2><p>重写（override）<br>发生在继承关系中，子类实现父类方法声明完全相同的方法。<br>为了满足里氏替换原则有两个限制：</p>
+<ul>
+<li>子类方法的访问权限必须大于等于父类方法。</li>
+<li>子类方法的返回类型必须是父类返回类型或者其子类型。</li>
+</ul>
+<p>使用@Override注解，可以让编译器帮忙检查是否满足以上两个条件。</p>
+<p>重载（overload）<br>存在于同一个类中， 一个方法与已经存在的方法名称上相同，但是参数类型、个数和顺序至少有一个不同。<br>但是 返回值不同，其他都相同不算重载。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Java/" data-id="claf5b39b0000agu67ocm1u7p" data-title="Java面试题" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java常见的异常
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计网应用token、cookie和session</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 15px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 20px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 15px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 10px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">项目经验</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/13/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Java数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/">Java常见的异常</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/13/Java/">Java面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/">计网应用token、cookie和session</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/12/Linux%E4%B8%8Eshell%E8%84%9A%E6%9C%AC/">Linux与shell脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
