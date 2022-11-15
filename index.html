@@ -93,7 +93,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Bean初始化的大致4个阶段"><a href="#Bean初始化的大致4个阶段" class="headerlink" title="Bean初始化的大致4个阶段"></a>Bean初始化的大致4个阶段</h2><ol>
+<li>实例化（instantiation）</li>
+<li>属性赋值（populate）</li>
+<li>初始化（initialization）</li>
+<li>销毁（destruction）</li>
+</ol>
+<h2 id="涉及到的扩展点的作用"><a href="#涉及到的扩展点的作用" class="headerlink" title="涉及到的扩展点的作用"></a>涉及到的扩展点的作用</h2><ol>
+<li>Aware接口<br>通过让Bean实现Aware接口，在bean中获取响应的Spring容器资源。</li>
+<li>BeanPostProcessor<br>是Spring修改Bean提供的强大扩展点，可作用于容器中所有Bean。</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -101,6 +111,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
+
     </footer>
   </div>
   
@@ -257,7 +269,40 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><ul>
+<li>1.8版本的变化</li>
+</ul>
+<ol>
+<li>加入红黑树</li>
+<li>插入数据方式变为尾插法、</li>
+<li>hash值计算方式变为2次扰动处理（1次位运算+1次异或）</li>
+<li>扩容策略变化，插入后再扩容</li>
+</ol>
+<ul>
+<li>线程不安全：<br>1.7中，扩容采用头插法，可能出现循环链表，为了修复改为尾插法。<br>HashMap任意版本中，如果在插入数据时多个线程命中了同一个槽，可能数据覆盖的情况，导致线程不安全。</li>
+</ul>
+<p>线程不安全解决方案</p>
+<ol>
+<li>给HashMap直接加锁</li>
+<li>使用Hashtable，比方法1效率高，原理是在方法上加Synchronized锁</li>
+<li>使用concurrentHashMap，本质是减小了锁的粒度，减少线程竞争，更高效。</li>
+</ol>
+<ul>
+<li>与concurrentHashMap的区别</li>
+</ul>
+<h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>版本区别：</p>
+<ol>
+<li>1.7 锁粒度 基于segment  1.8基于entry节点</li>
+<li>1.7锁用reentrantLock   1.8用synchronized</li>
+<li>底层结构1.7 segment  + HashEntry + Unsafe  ； 1.8 Synchronized + CAS + Node + Unsafe</li>
+</ol>
+<h2 id="ArrayList-amp-LinkedList（双向链表）"><a href="#ArrayList-amp-LinkedList（双向链表）" class="headerlink" title="ArrayList &amp; LinkedList（双向链表）"></a>ArrayList &amp; LinkedList（双向链表）</h2><ol>
+<li>对于随机访问，ArrayList 优先，因为基于数组实现，存储空间连续，支持随机访问</li>
+<li>对于新增和删除数据，LinkedList优先，因为ArrayList要移动数据。</li>
+<li>同样数据量LinkedList所占空间更小，ArrayList需要预留空间便于后续数据增加，而LinkedList只需要增加一个节点。</li>
+</ol>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>set继承于Collection接口，不允许出现重复元素，并且无序。<br>HashSet基于HashMap实现，底层用HashMap保存元素。<br>元素哈希值通过元素hashcode方法来获得，首先判断hashcode，之后判断equals，如果都相同视为同一个元素。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -265,6 +310,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
     </footer>
   </div>
   
@@ -295,7 +342,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="1-8"><a href="#1-8" class="headerlink" title="1.8"></a>1.8</h2><p>函数编程（lambda表达式）</p>
+<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><p>将提供长期支持服务，将作为Java默认支持版本。指导2023年9月<br>从8 到 11</p>
+<ol>
+<li>语言新特性</li>
+<li>新工具和库更新</li>
+<li>JVM优化</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -303,6 +357,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
     </footer>
   </div>
   
@@ -333,7 +389,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>什么是反射？<br>哪里用到了反射？怎么用的？<br>反射原理？</p>
+
       
     </div>
     <footer class="article-footer">
@@ -341,6 +398,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
     </footer>
   </div>
   
@@ -531,7 +590,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
     </div>
   </div>
 
@@ -541,7 +600,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 13.33px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 16.67px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 16.67px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.33px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 13.33px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" style="font-size: 10px;">项目开发</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">项目经验</a>
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 13.33px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 16.67px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 16.67px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.33px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 13.33px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" style="font-size: 10px;">项目开发</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">项目经验</a>
     </div>
   </div>
 
