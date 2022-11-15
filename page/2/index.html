@@ -71,6 +71,418 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Java/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T08:14:44.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/13/Java/">Java面试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>访问权限</li>
+<li>接口与抽象类</li>
+<li>super</li>
+<li>重写与重载</li>
+</ul>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>抽象类 和抽象方法 需要用abstract 关键字声明。 抽象类一般包含抽象方法。<br>抽象类和一般类的区别在于抽象类不能被实例化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractClassExample</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> y;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func2</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AbstractExtendClassExample</span> <span class="keyword">extends</span> <span class="title class_">AbstractClassExample</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// AbstractClassExample ac1 = new AbstractClassExample(); // &#x27;AbstractClassExample&#x27; is abstract; cannot be instantiated</span></span><br><span class="line"><span class="type">AbstractClassExample</span> <span class="variable">ac2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AbstractExtendClassExample</span>();</span><br><span class="line">ac2.func1();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用抽象类：</p>
+<ol>
+<li>需要多个相关的类中共享代码。</li>
+<li>需要能控制继承来的成员的访问权限，并不都是public。</li>
+<li>需要继承非静态和非常量字段。</li>
+</ol>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是完全抽象的类，在 Java8之前， 就是不能有任何的方法实现<br>在Java 8开始，接口可以拥有默认的方法实现，因为不支持默认方法的接口维护成本太高了。</p>
+<p>接口的成员（字段+方法）都是默认public，并且不允许定义为Private 或 protected。</p>
+<p>接口的字段默认都是 static 和 final 的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">InterfaceExample</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">func2</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line">    <span class="comment">// int y;               // Variable &#x27;y&#x27; might not have been initialized</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="variable">z</span> <span class="operator">=</span> <span class="number">0</span>;       <span class="comment">// Modifier &#x27;public&#x27; is redundant for interface fields</span></span><br><span class="line">    <span class="comment">// private int k = 0;   // Modifier &#x27;private&#x27; not allowed here</span></span><br><span class="line">    <span class="comment">// protected int l = 0; // Modifier &#x27;protected&#x27; not allowed here</span></span><br><span class="line">    <span class="comment">// private void fun3(); // Modifier &#x27;private&#x27; not allowed here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceImplementExample</span> <span class="keyword">implements</span> <span class="title class_">InterfaceExample</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">func1</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;func1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// InterfaceExample ie1 = new InterfaceExample(); // &#x27;InterfaceExample&#x27; is abstract; cannot be instantiated</span></span><br><span class="line"><span class="type">InterfaceExample</span> <span class="variable">ie2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InterfaceImplementExample</span>();</span><br><span class="line">ie2.func1();</span><br><span class="line">System.out.println(InterfaceExample.x);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用接口</p>
+<ol>
+<li>需要让不相关的类都实现一个方法，例如不相关的类都实现Comparable接口中的compareTo()；</li>
+<li>想要确定特定数据类型的行为，但是不关心谁实现这个行为。 </li>
+<li>需要使用多重继承。</li>
+</ol>
+<h2 id="抽象类与接口区别"><a href="#抽象类与接口区别" class="headerlink" title="抽象类与接口区别"></a>抽象类与接口区别</h2><p>使用上来说，一个类可以实现多个接口，但是不能继承多个抽象类。<br>接口的字段 只能是static 和final类型，抽象类没有限制。<br>接口成员只能是public，抽象类成员可以有多种访问权限。</p>
+<p>选择：<br>很多时候，接口优于抽象类，因为接口没有抽象类严格的类层级结构要求，可以灵活为一个类添加行为。 并且从Java8开始，接口也可以有默认的方法实现，使得修改接口的成本很低。</p>
+<h2 id="重载和重写"><a href="#重载和重写" class="headerlink" title="重载和重写"></a>重载和重写</h2><p>重写（override）<br>发生在继承关系中，子类实现父类方法声明完全相同的方法。<br>为了满足里氏替换原则有两个限制：</p>
+<ul>
+<li>子类方法的访问权限必须大于等于父类方法。</li>
+<li>子类方法的返回类型必须是父类返回类型或者其子类型。</li>
+</ul>
+<p>使用@Override注解，可以让编译器帮忙检查是否满足以上两个条件。</p>
+<p>重载（overload）<br>存在于同一个类中， 一个方法与已经存在的方法名称上相同，但是参数类型、个数和顺序至少有一个不同。<br>但是 返回值不同，其他都相同不算重载。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Java/" data-id="claf5b39b0000agu67ocm1u7p" data-title="Java面试题" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-计网应用token、cookie和session" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T09:19:19.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/">计网应用token、cookie和session</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="session-和cookie-和token分别是什么"><a href="#session-和cookie-和token分别是什么" class="headerlink" title="session 和cookie 和token分别是什么"></a>session 和cookie 和token分别是什么</h2><p>session 是基于Cookie实现的一种记录服务端和客户端会话状态的机制。<br>Session存储在服务端。 SessionID 会被存储在客户端的Cookie中。</p>
+<h2 id="session-和cookie-和token分别为什么"><a href="#session-和cookie-和token分别为什么" class="headerlink" title="session 和cookie 和token分别为什么"></a>session 和cookie 和token分别为什么</h2><p>cookie<br>在HTTP&#x2F;1.1 引入cookie来保存状态信息，使得http协议尽可能的简单。<br>随着现在浏览器的存储方式，cookie逐渐被淘汰。</p>
+<h2 id="session-和cookie-和token应用场景"><a href="#session-和cookie-和token应用场景" class="headerlink" title="session 和cookie 和token应用场景"></a>session 和cookie 和token应用场景</h2><p>cookie</p>
+<ol>
+<li>session management 会话管理<br>登录、购物车、游戏分数等 任何服务器来存储的数据 </li>
+<li>personalization 个性化<br>用户偏好、主题 和其他设置</li>
+<li>tracking 跟踪<br>记录和分析用户行为</li>
+</ol>
+<h2 id="session-和cookie-和token区别"><a href="#session-和cookie-和token区别" class="headerlink" title="session 和cookie 和token区别"></a>session 和cookie 和token区别</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/" data-id="claf5b3a30005agu63ep95i5x" data-title="计网应用token、cookie和session" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Linux与shell脚本" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/Linux%E4%B8%8Eshell%E8%84%9A%E6%9C%AC/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T09:18:56.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/Linux%E4%B8%8Eshell%E8%84%9A%E6%9C%AC/">Linux与shell脚本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/Linux%E4%B8%8Eshell%E8%84%9A%E6%9C%AC/" data-id="claf5b3a10004agu6fk4db304" data-title="Linux与shell脚本" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-旅行项目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/%E6%97%85%E8%A1%8C%E9%A1%B9%E7%9B%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T09:07:58.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/%E6%97%85%E8%A1%8C%E9%A1%B9%E7%9B%AE/">旅行项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么做这个"><a href="#为什么做这个" class="headerlink" title="为什么做这个"></a>为什么做这个</h2><p>想把旅行的一些经历和想法记录下来。</p>
+<h2 id="项目架构与模块"><a href="#项目架构与模块" class="headerlink" title="项目架构与模块"></a>项目架构与模块</h2><ul>
+<li><p>项目技术栈<br>基于SpringBoot的单体项目，spring security、JPA、MySQL、JWT<br>业务类、登录与注册、认证与授权、数据存储</p>
+</li>
+<li><p>项目流程<br>注册流程<br>登录流程</p>
+</li>
+</ul>
+<p>授权与认证流程</p>
+<p>数据操作流程</p>
+<h2 id="项目遇到的问题"><a href="#项目遇到的问题" class="headerlink" title="项目遇到的问题"></a>项目遇到的问题</h2><h2 id="项目亮点"><a href="#项目亮点" class="headerlink" title="项目亮点"></a>项目亮点</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/%E6%97%85%E8%A1%8C%E9%A1%B9%E7%9B%AE/" data-id="cladpsplp00005ku66c0a4xyg" data-title="旅行项目" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-微服务项目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%A1%B9%E7%9B%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T09:06:59.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%A1%B9%E7%9B%AE/">微服务项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么做这个"><a href="#为什么做这个" class="headerlink" title="为什么做这个"></a>为什么做这个</h2><p>为了尝试与学习微服务技术栈（感兴趣所以就尝试去做了）</p>
+<h2 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h2><p>项目技术栈<br>SpringBoot、SpringCloud gateway、注册中心Eureka、Prometheus系统监控、Docker容器化</p>
+<p>网关的登录与路由、服务注册与发现、应用容器化、系统监控</p>
+<p>流程<br>网关路由流程<br>服务注册中心流程<br>容器化过程<br>系统监控流程</p>
+<h2 id="项目遇到的问题"><a href="#项目遇到的问题" class="headerlink" title="项目遇到的问题"></a>项目遇到的问题</h2><h2 id="项目亮点"><a href="#项目亮点" class="headerlink" title="项目亮点"></a>项目亮点</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%A1%B9%E7%9B%AE/" data-id="cladpspm100015ku6868fdwqr" data-title="微服务项目" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MongoDB" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/MongoDB/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T08:39:53.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/MongoDB/">MongoDB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>面向文档的NoSQL数据库，用于大量数据存储。<br>mongdo的文档结构很符合开发人员编程语言中构造的类和对象。</p>
+<h2 id="为什么用"><a href="#为什么用" class="headerlink" title="为什么用"></a>为什么用</h2><ul>
+<li>面向文档： 数据存储在文档中，使得Mongo非常灵活，可以适应实际的业务环境和需求。</li>
+<li>负载均衡：使用分片的概念，通过多个mongo实例之间拆分数据来水平扩展。可以在多台服务器上运行，以平衡负载或复制数据，以便在硬件出现故障时保持系统正常运行。</li>
+</ul>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>文档的分组，集合等效于RDBMS中创建的表。集合存在于单个数据库中。</p>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>集合的记录。文档包含字段名称和值。<br>mongo将数据存储为一个文档，类似于JSON对象<br>数据由键值对组成，类似于Java的Map</p>
+<h2 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h2><p>字段包含名称和值。一个文档拥有零个或者多个字段。 字段类似于关系数据库中的列。</p>
+<h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h2><p>mongoDB 为了web提供可扩展的高性能数据存储解决方案</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/MongoDB/" data-id="cladpdmoq0000rku6bmu33h2p" data-title="MongoDB" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MySQL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/12/MySQL/" class="article-date">
+  <time class="dt-published" datetime="2022-11-12T08:39:40.000Z" itemprop="datePublished">2022-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/12/MySQL/">MySQL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>字段类型<ul>
+<li>整型<br>  TINYINT、SMALLINT、MEDIUMINT、INT、BIGINT</li>
+<li>浮点数<br>  FLOAT、DOUBLE、DECIMAL</li>
+<li>字符串<br>  CHAR、VARCHAR</li>
+<li>时间和日期<ul>
+<li><ol>
+<li>DATETIME （1001-9999年）</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>TIMESTAMP（从1970.1.1开始的秒数）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><ul>
+<li><p>InnoDB<br>MySQL默认的事务型存储引擎，只有在需要它不支持的特性时，才考虑使用其它存储引擎。</p>
+</li>
+<li><p>MyISAM<br>不支持事务</p>
+</li>
+</ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h2 id="索引-B-数"><a href="#索引-B-数" class="headerlink" title="索引 B+数"></a>索引 B+数</h2><ol>
+<li>数据结构特点</li>
+<li>与红黑树的区别</li>
+</ol>
+<h2 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h2><h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/12/MySQL/" data-id="cladpdmp60002rku6fs96ehzn" data-title="MySQL" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-如何提升口语交际能力" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/" class="article-date">
+  <time class="dt-published" datetime="2022-11-11T08:39:54.000Z" itemprop="datePublished">2022-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/">如何提升口语交际能力</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/" data-id="cladhvh3x0001tsu6c516ckj7" data-title="如何提升口语交际能力" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-个人技能总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/11/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD%E6%80%BB%E7%BB%93/" class="article-date">
@@ -168,363 +580,11 @@
 
 
   
-    <article id="post-为什么我想做软件开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/10/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%83%B3%E5%81%9A%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="article-date">
-  <time class="dt-published" datetime="2022-11-10T11:09:20.000Z" itemprop="datePublished">2022-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/10/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%83%B3%E5%81%9A%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">为什么我想做软件开发</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="软件开发的特点"><a href="#软件开发的特点" class="headerlink" title="软件开发的特点"></a>软件开发的特点</h2><p>软件开发是比较要求逻辑性，需要逻辑清晰才能设计出运行良好的程序。<br>开发的过程需要抽象思维，描述过程、总结规律。将事物特性抽象出来，表达出关系，最终可以得到一种自动化的流程或者减少重复的动作。</p>
-<h2 id="我的爱好与特长"><a href="#我的爱好与特长" class="headerlink" title="我的爱好与特长"></a>我的爱好与特长</h2><p>我认为我比较擅长逻辑思考，推理分析。<br>我学习到一些系统设计，算法设计，数据库设计，最终会得到一个系统，这个过程让我很有成就感。</p>
-<h2 id="我做了什么"><a href="#我做了什么" class="headerlink" title="我做了什么"></a>我做了什么</h2><p>大学期间期末考试中得出结论，可以通过一定的方法复习，可以轻松的考高分。<br>我喜欢软件设计，所以我尝试做了一些工具性的项目，让我方便去做其他事情，比如算法设计平台，todolist。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/10/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%83%B3%E5%81%9A%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" data-id="claazumve0000nwu6chtj8yda" data-title="为什么我想做软件开发" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-what-is-how-to-use-Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/10/what-is-how-to-use-Docker/" class="article-date">
-  <time class="dt-published" datetime="2022-11-10T04:52:38.000Z" itemprop="datePublished">2022-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/10/what-is-how-to-use-Docker/">what is &amp; how to use Docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="what-is-Docker"><a href="#what-is-Docker" class="headerlink" title="what is Docker"></a>what is Docker</h2><p>Docker 是一个用来开发、发布和运行应用的开放平台。<br>docker 工具目的是让开发者更简单的应用容器来创建、部署和运行应用。</p>
-<h2 id="why-Docker"><a href="#why-Docker" class="headerlink" title="why Docker"></a>why Docker</h2><p>1.Docker 可以让基础架构和应用程序分离，这样可以快速交付软件。<br>2.Docker可以像管理应用软件一样管理基础架构。<br>3.利用Docker的快速交付、测试和部署方法，可以显著减少写代码和生产环境运行之间的延迟。<br>4.Docker提供工具和平台去管理容器的生命周期。</p>
-<h2 id="how-to-use-Docker-amp-what-to-do"><a href="#how-to-use-Docker-amp-what-to-do" class="headerlink" title="how to use Docker &amp; what to do"></a>how to use Docker &amp; what to do</h2><p>what to do with Docker<br>1.快速一致的发布应用<br>2.响应式的部署和扩容<br>3.相同硬件上更多的工作负载</p>
-<p>Docker 的工作基于容器和镜像，所以需要理解什么是容器和镜像。<br>容器是和机器上其他进程相互隔离的沙盒进程。就是一个可运行的镜像实例。<br>容器镜像就是一个包含了容器运行的文件系统、包括所有依赖、配置、脚本二进制文件等。也包含一些容器其他的配置，包括环境变量、初始运行命令和其他元数据。</p>
-<h2 id="getting-start"><a href="#getting-start" class="headerlink" title="getting start"></a>getting start</h2><p>1.创建一个包含能够构建java镜像需要指令的Dockerfile<br>2.将镜像作为容器运行<br>3.建立本地开发环境，给容器连接数据库<br>4.用Docker Compose 运行这个Spring Boot应用<br>5.用Github Actions为你的应用去配置CI&#x2F;CD管道<br>6.把应用部署到云上</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/10/what-is-how-to-use-Docker/" data-id="claam38fx00011cu6dm7b4c2r" data-title="what is &amp; how to use Docker" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-what-is-how-to-use-kubernetes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/10/what-is-how-to-use-kubernetes/" class="article-date">
-  <time class="dt-published" datetime="2022-11-10T04:30:59.000Z" itemprop="datePublished">2022-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/10/what-is-how-to-use-kubernetes/">what is &amp; how to use kubernetes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="what-is-kubernetes"><a href="#what-is-kubernetes" class="headerlink" title="what is kubernetes"></a>what is kubernetes</h2><p>k8s 是一个用来自动部署，扩展和管理容器化的应用的开源系统。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/10/what-is-how-to-use-kubernetes/" data-id="claam38fe00001cu65i86ctrl" data-title="what is &amp; how to use kubernetes" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-学习agile" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/%E5%AD%A6%E4%B9%A0agile/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T10:14:28.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/%E5%AD%A6%E4%B9%A0agile/">学习agile</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是agile"><a href="#什么是agile" class="headerlink" title="什么是agile"></a>什么是agile</h2><p>敏捷是一种迭代式的项目管理和软件开发方法，可以更快为用户提供价值。<br>敏捷团队更小的、易消耗，增量交付工作。<br>持续性的评估需求、计划和结果，因此可以容易更快响应变化。</p>
-<h2 id="如何做适应agile的开发者"><a href="#如何做适应agile的开发者" class="headerlink" title="如何做适应agile的开发者"></a>如何做适应agile的开发者</h2><p>（三件事情—分支、持续集成、自动测试使得保证代码质量的情况下更有生产力）<br>branching strategy<br>分支策略可能因为团队而改变<br>三种策略： release branching 、 feature branching 、 task branching（issue branching）</p>
-<p>Testing</p>
-<p>CI（agile和devops的最佳实践—持续的build，和自动化测试）<br>主要包含两件事情：确保代码可编译；测试确保代码达到设计的目标<br>持续集成就是持续的向主分支集成改变的代码，同时尽可能频繁和尽早测试改变的代码。<br>CI的好处： 更快的得到代码改变的反馈。</p>
-<p>CI中的测试：Unit test、API test、 Functional tests</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/%E5%AD%A6%E4%B9%A0agile/" data-id="claam38g800031cu6dq187tpk" data-title="学习agile" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-学习scrum" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/%E5%AD%A6%E4%B9%A0scrum/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T10:10:32.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/%E5%AD%A6%E4%B9%A0scrum/">学习scrum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/%E5%AD%A6%E4%B9%A0scrum/" data-id="claam38gc00041cu64lbn66fq" data-title="学习scrum" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-如何学习编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T09:11:02.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/">如何学习编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2><p>你的大脑就是一块肌肉，学习编程就好像健身，需要持续性的、不断重复的练习。 持续性很重要。</p>
-<p>第二个就是渐进式学习。</p>
-<h2 id="如何学习？"><a href="#如何学习？" class="headerlink" title="如何学习？"></a>如何学习？</h2><p>学习一个新的概念，是因为它好用，用它可以节省时间，可以节省体力，它可以让系统消耗更小，可以有更快的响应时间等，总之就是为了能够应用并能带来好处。</p>
-<p>那么学习编程的一些概念就是为了理解，并应用到自己的场景中。</p>
-<p>首先入手 概念，这个名词，是什么，为什么产生，为什么用。<br>懂了概念之后，learn by doing！开始着手怎么用，如何应用到自己的场景中。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B/" data-id="cla9h614n0000wou62senblnx" data-title="如何学习编程" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-如何掌握一个技能" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E4%B8%80%E4%B8%AA%E6%8A%80%E8%83%BD/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T09:10:18.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E4%B8%80%E4%B8%AA%E6%8A%80%E8%83%BD/">如何掌握一个技能</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><p>掌握一个技巧之前，状态是要么完全不会，要么不完全会。<br>不断的重复练习，目的是暴露并发现自己不会、不懂的地方，对这些地方学习，或改正，在下一次练习的时候去避免。<br>避免之前犯过的错误，分析为什么出现这个错误，正确的是什么样子。<br>Ever tried， ever failed.<br>No Matter. Try again, fail again. Fail better.<br>重复的练习的生命周期：<br>练习-&gt;暴露问题-&gt;改善问题，避免相同错误-&gt;从而不断减少错误-&gt;从而逐渐熟练。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>应用是目标。 为了能够应用，而去掌握一门技能。<br>学习游泳不是为了学会游泳，而是为了游泳。<br>学习编程不是为了会解决两数之和的问题，不是为了写hello，world。而是用编程去计算出一个问题，设计一个网页，做一个产品。<br>所以学会一些技能之后要去用。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E4%B8%80%E4%B8%AA%E6%8A%80%E8%83%BD/" data-id="cla9h61530002wou66g97abjc" data-title="如何掌握一个技能" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-self-introduction" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/self-introduction/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T04:50:24.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/self-introduction/">self introduction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="职业"><a href="#职业" class="headerlink" title="职业"></a>职业</h1><h2 id="我在干什么"><a href="#我在干什么" class="headerlink" title="我在干什么"></a>我在干什么</h2><p>我在找工作，目前的意向岗位是软件开发、后端开发。</p>
-<h2 id="我的技术生涯"><a href="#我的技术生涯" class="headerlink" title="我的技术生涯"></a>我的技术生涯</h2><p>我的技术学习主要是在大学和大学毕业后，自学。<br>我主要学习的技术栈是后端开发相关的。<br>编程语言：Java<br>框架：Spring、SpringBoot、SpringCloud、MyBatis<br>数据库：MySQL、MongoDB、Redis</p>
-<h2 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h2><p>主要是基于SpringBoot开发的项目，比较喜欢做工具相关的项目。这样的项目目的是可以方便我学习或者自我提升的工具。</p>
-<p>TODO-List（规划每天要干什么）、 AlgorithmDesignCanvas</p>
-<h2 id="我的学习方法和途径"><a href="#我的学习方法和途径" class="headerlink" title="我的学习方法和途径"></a>我的学习方法和途径</h2><p>我的思想是通过多种途径（多种资源和多个人）学习，可以增强我对于一个概念的理解。<br>通过更多的练习，可以让我对于一些技术有更熟练的应用能力。</p>
-<p>对标以上两个理念，我产生了我的方法，以及我怎么找资源。</p>
-<p>我通过看官方文档学习Spring（因为很细节、很全面、还有一些上手的例子）<br>我会通过看视频学习，Coursera上课，github仓库找项目、Google看一些文档或者概念</p>
-<h2 id="我的职业规划"><a href="#我的职业规划" class="headerlink" title="我的职业规划"></a>我的职业规划</h2><p>两到三年之内，我规划是广度优先扩展，希望自己对这个行业有更多的学习、认知和尝试。<br>三年之后，深度优先，对于行业有自己的清晰的发展方向，开始深入研究，希望有所贡献。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>我认为很多事情是相互产生影响的。比如我在旅行的过程中，我会有很多想法在大脑浮现出来。我会对很多事情有一些更深入的思考，或者有一些新的想法。</p>
-<h2 id="内容创作"><a href="#内容创作" class="headerlink" title="内容创作"></a>内容创作</h2><p>通常我会把自己的一些想法记录下来，不同的阶段会有不同的工具去记录。<br>在家的时候，有时会写在日记本上。 还有很多会记录在手机的便签上。也有一些会记录在github、其他的手机笔记本上，电脑的便签上。我觉得这样记录很零散，不便于之后查找一些信息，所以我决定专注于自己这个Github博客上，进行内容创作。</p>
-<p>平时的一些想法 小的点子会记录在手机便签里。最后都整理在这个博客里。</p>
-<h2 id="旅行"><a href="#旅行" class="headerlink" title="旅行"></a>旅行</h2><p>我喜欢旅行，因为我在离开一个地方的时候，我会有很多想法浮现出来，我通常会在交通工具上思考，并记录一些内容。<br>我喜欢看山水，喜欢自然风光。</p>
-<h2 id="运动健身"><a href="#运动健身" class="headerlink" title="运动健身"></a>运动健身</h2><p>篮球，各种球类<br>街头健身</p>
-<h2 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/self-introduction/" data-id="cla96wlsv0000pku60jqkeibw" data-title="self introduction" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -538,7 +598,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
     </div>
   </div>
 
@@ -548,7 +608,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 15px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 20px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 15px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 15px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 10px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 15px;">项目经验</a>
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 13.33px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 16.67px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 16.67px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.33px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 13.33px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" style="font-size: 10px;">项目开发</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">项目经验</a>
     </div>
   </div>
 
@@ -570,23 +630,23 @@
       <ul>
         
           <li>
-            <a href="/2022/11/13/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Java数据类型</a>
+            <a href="/2022/11/15/Spring%E4%B8%ADBean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Spring中Bean的生命周期</a>
           </li>
         
           <li>
-            <a href="/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/">Java常见的异常</a>
+            <a href="/2022/11/15/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Java对象的生命周期</a>
           </li>
         
           <li>
-            <a href="/2022/11/13/Java/">Java面试题</a>
+            <a href="/2022/11/15/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87%E4%B8%80%E5%9C%BA%E8%A7%86%E9%A2%91%E9%9D%A2%E8%AF%95/">如何准备一场视频面试</a>
           </li>
         
           <li>
-            <a href="/2022/11/12/%E8%AE%A1%E7%BD%91%E5%BA%94%E7%94%A8token%E3%80%81cookie%E5%92%8Csession/">计网应用token、cookie和session</a>
+            <a href="/2022/11/15/Java%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">Java对象引用</a>
           </li>
         
           <li>
-            <a href="/2022/11/12/Linux%E4%B8%8Eshell%E8%84%9A%E6%9C%AC/">Linux与shell脚本</a>
+            <a href="/2022/11/15/Java%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E4%B8%8E%E5%AE%9E%E7%8E%B0/">Java常用集合与实现</a>
           </li>
         
       </ul>
