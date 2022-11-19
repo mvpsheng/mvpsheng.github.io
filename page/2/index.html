@@ -71,6 +71,170 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-认证与授权" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/15/%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83/" class="article-date">
+  <time class="dt-published" datetime="2022-11-15T02:20:09.000Z" itemprop="datePublished">2022-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/15/%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83/">认证与授权</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a target="_blank" rel="noopener" href="https://javaguide.cn/system-design/security/basis-of-authority-certification.html#%E8%AE%A4%E8%AF%81-authentication-%E5%92%8C%E6%8E%88%E6%9D%83-authorization-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88">https://javaguide.cn/system-design/security/basis-of-authority-certification.html#%E8%AE%A4%E8%AF%81-authentication-%E5%92%8C%E6%8E%88%E6%9D%83-authorization-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/15/%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83/" data-id="clahwwxa70009u8u6b7x49716" data-title="认证与授权" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java数据类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T09:11:09.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/13/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Java数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="大分类"><a href="#大分类" class="headerlink" title="大分类"></a>大分类</h2><p>基本数据类型 8个， 引用类型 3个</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><ul>
+<li>byte（8）、short（16）、int（32）、long（64） 属于数值型中的整数型</li>
+<li>float（32）、double（64）属于浮点类型</li>
+<li>char（16） 属于字符型</li>
+<li>boolean（1） 属于布尔型</li>
+</ul>
+<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2><p>类、接口、数组</p>
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>java的8个基本数据类型，分别对应8个包装类，包装类型和基本类型之间的赋值通过自动装箱与拆箱完成。</p>
+<ul>
+<li>byte – Byte</li>
+<li>boolean – Boolean</li>
+<li>short – Short</li>
+<li>char – Character</li>
+<li>int – Integer</li>
+<li>long – Long</li>
+<li>float – Float</li>
+<li>double – Double<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">2</span>;     <span class="comment">// 装箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> x;         <span class="comment">// 拆箱</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="为什么要包装类"><a href="#为什么要包装类" class="headerlink" title="为什么要包装类"></a>为什么要包装类</h2><ul>
+<li>基本数据类型简单，但是不支持泛型和集合。</li>
+<li>不符合面向对象思维。</li>
+<li>包装类提供很多方法，方便使用。如：Integer类toHexString（int i）、parseInt（String s）等。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="claf5b39z0003agu65a6m460p" data-title="Java数据类型" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java常见的异常" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T08:58:50.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/">Java常见的异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="常见异常类型"><a href="#常见异常类型" class="headerlink" title="常见异常类型"></a>常见异常类型</h2><ul>
+<li>NullPointerException 空指针异常</li>
+<li>ArrayIndexOutOfBoundsException 索引越界异常</li>
+<li>InputFormatException输入类型不匹配异常</li>
+<li>SQLException SQL异常</li>
+<li>IllegalArgumentException 非法参数异常</li>
+<li>NumberFormatException 类型转换异常</li>
+</ul>
+<h2 id="异常解决方法"><a href="#异常解决方法" class="headerlink" title="异常解决方法"></a>异常解决方法</h2><p>Java内建了通用的异常，以Throwable为顶层父类。<br>Throwable派生出Error和Exception类。</p>
+<p>Error：Error类以及子类的实例，代表JVM本身的错误，不能被程序员通过代码处理。<br>Exception：Exception以及子类，代表程序运行时发送的各种不期望发生的时间。可以被java异常处理机制使用，是异常处理的核心。</p>
+<h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><ol>
+<li><p>try catch</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="comment">// 程序代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(ExceptionName e1)&#123;</span><br><span class="line"><span class="comment">//Catch 块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>throw<br>throw 关键字作用是抛出一个异常，抛出时候是抛出一个异常类的实例化对象，在异常处理中，try语句捕获的就是一个异常对象，那么异常对象也可以自己抛出。</p>
+</li>
+<li><p>throws<br>定义一个方法的时候可以用throws关键字声明。使用throws关键字声明的方法表示此方法不处理异常，而交给方法调用着进行处理。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Java%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%82%E5%B8%B8/" data-id="claf5b39n0001agu6gjo0blix" data-title="Java常见的异常" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/13/Java/" class="article-date">
@@ -443,143 +607,6 @@
 
 
   
-    <article id="post-如何提升口语交际能力" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/" class="article-date">
-  <time class="dt-published" datetime="2022-11-11T08:39:54.000Z" itemprop="datePublished">2022-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/">如何提升口语交际能力</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E5%8F%A3%E8%AF%AD%E4%BA%A4%E9%99%85%E8%83%BD%E5%8A%9B/" data-id="cladhvh3x0001tsu6c516ckj7" data-title="如何提升口语交际能力" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-个人技能总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/11/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2022-11-11T08:34:25.000Z" itemprop="datePublished">2022-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/11/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD%E6%80%BB%E7%BB%93/">Java语言到Spring框架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么总结"><a href="#为什么总结" class="headerlink" title="为什么总结"></a>为什么总结</h2><p>学习很多技术，总结为了<br>第一方面，加深记忆。<br>第二方面，加深理解。<br>第三方面，提炼出自己的理解，为我所用。</p>
-<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>Java语言有这么一些概念跟面向对象有关系：<br>面向对象中的六个概念：class类、对象、抽象、继承、封装、多态<br>1、对象：<br>每一个现实世界的实体都是一个对象。 一个对象有行为和属性。 一个汽车可以移动 ，可以用价格，排量，颜色等属性。</p>
-<p>2、类：<br>所有相关的对象的集合就是一个类。<br>类是所有相关对象的集合，出租车、公交车、救护车都属于汽车类。</p>
-<p>3、继承：<br>一个类可以从父类中继承一些特性就好像我们从父母那里也继承了一些特性。<br> 就像手机，可以有子类 移动电话和固定电话  但是这俩都继承了打电话的特性。</p>
-<p>4、封装<br>就是将数据包装到一个单元中，并且保护它<br>将想胶囊一样，将药物颗粒封装起来，与外部环境隔离。<br>银行将存储保存在保险柜里，用密码保护起来。</p>
-<p>5、抽象<br>将复杂度隐藏起来，暴露简单相关的内容。<br>汽车将引擎、很多机械复杂性隐藏卡里， 用户可以用到刹车制动器、加速器、变速箱。</p>
-<p>6.多态<br>多种形式。同样的名字但是有不同的形式。行为名称是一样的，不同对象的行为表现出不一样。<br>就好像下棋，棋子的行为是移动， 但是有的可以沿着对角线移动，有的只能水平和垂直移动。</p>
-<h2 id="设计模式与其在框架中的应用"><a href="#设计模式与其在框架中的应用" class="headerlink" title="设计模式与其在框架中的应用"></a>设计模式与其在框架中的应用</h2><p>1.工厂模式<br>Spring IOC中用到了工厂模式去创建bean的对象实例</p>
-<p>2.单例模式<br>Spring中Bean的默认为singleton单例模式。</p>
-<p>3.代理模式<br>AOP模块中AopProxy, 用了JDK动态代理和CGLIB的字节码生成技术。</p>
-<h2 id="Spring框架"><a href="#Spring框架" class="headerlink" title="Spring框架"></a>Spring框架</h2><p>IOC（ioc是设计思想、依赖注入是具体实现）<br>原理以及用到的设计模式，应用场景<br>IOC带来的好处是什么，将对象的控制权和生命周期交给IOC容器，那么这个容器的过程，以及这个对象的生命周期是什么样的<br>IOC的目的是解耦， 项目开发中具体用到IOC是什么场景</p>
-<p>AOP<br>原理以及用到的设计模式，应用场景<br>通过切面技术对业务主体增加额外的通知（advice），从而对声明的切点（pointcut）的代码块进行统一管理和装饰。<br>在某些方法的前后进行一些通用的操作，这些操作本身不会影响程序本身的运行。</p>
-<h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2><p>自动配置<br>启动过程原理<br>常用注解</p>
-<h2 id="Spring-Boot-与Spring-Cloud"><a href="#Spring-Boot-与Spring-Cloud" class="headerlink" title="Spring Boot 与Spring Cloud"></a>Spring Boot 与Spring Cloud</h2><p>springboot 专注于快速开发单个微服务个体；SpringCloud 关注全局的服务治理框架。 将springboot开发的一些单体微服务整合并管理。 提供配置管理、服务发现、断路器、路由、全局锁、分布式会话等集成服务。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/11/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD%E6%80%BB%E7%BB%93/" data-id="cladhvh3j0000tsu63khlau0f" data-title="Java语言到Spring框架" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-未来" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/10/%E6%9C%AA%E6%9D%A5/" class="article-date">
-  <time class="dt-published" datetime="2022-11-10T11:26:33.000Z" itemprop="datePublished">2022-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/10/%E6%9C%AA%E6%9D%A5/">未来</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="未来的工作"><a href="#未来的工作" class="headerlink" title="未来的工作"></a>未来的工作</h2><p>做自己喜欢的工作，WLB<br>希望可以对软件开发有所贡献。  开源软件。<br>坚持做一个content creater。</p>
-<h2 id="未来的生活"><a href="#未来的生活" class="headerlink" title="未来的生活"></a>未来的生活</h2><p>坚持健身、阅读、打理好自己的形象<br>坚持记录生活。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>在写这篇文章的时候，我突然感觉，想要未来的样子，也许就是现在没有的样子。<br>规划未来，就是在给现在的自己指导要注重什么，要做什么。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/10/%E6%9C%AA%E6%9D%A5/" data-id="claazumvs0002nwu6473p5yov" data-title="未来" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -598,7 +625,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">Java虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" rel="tag">个人技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" rel="tag">思路总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%91/" rel="tag">我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" rel="tag">技术研究</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" rel="tag">软件开发理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" rel="tag">项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" rel="tag">项目经验</a></li></ul>
     </div>
   </div>
 
@@ -608,7 +635,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 13.33px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 16.67px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 16.67px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.33px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 13.33px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" style="font-size: 10px;">项目开发</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">项目经验</a>
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">Java虚拟机</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8A%80%E8%83%BD/" style="font-size: 13.33px;">个人技能</a> <a href="/tags/%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/" style="font-size: 10px;">思路总结</a> <a href="/tags/%E6%88%91/" style="font-size: 16.67px;">我</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 16.67px;">技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">技术研究</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.33px;">数据库</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%A7%A3/" style="font-size: 16.67px;">软件开发理解</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" style="font-size: 10px;">项目开发</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">项目经验</a>
     </div>
   </div>
 
@@ -630,23 +657,23 @@
       <ul>
         
           <li>
+            <a href="/2022/11/19/how-to-add-a-feature/">how to add a feature?</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/19/how-to-build-a-feature/">how to build a feature?</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/16/JVM/">JVM</a>
+          </li>
+        
+          <li>
             <a href="/2022/11/15/Spring%E4%B8%ADBean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Spring中Bean的生命周期</a>
           </li>
         
           <li>
             <a href="/2022/11/15/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Java对象的生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/15/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87%E4%B8%80%E5%9C%BA%E8%A7%86%E9%A2%91%E9%9D%A2%E8%AF%95/">如何准备一场视频面试</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/15/Java%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8/">Java对象引用</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/15/Java%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E4%B8%8E%E5%AE%9E%E7%8E%B0/">Java常用集合与实现</a>
           </li>
         
       </ul>
