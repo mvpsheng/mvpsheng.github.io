@@ -9,7 +9,7 @@
     
     <title>
         
-            Redis |
+            接口文档技术 |
         
         郭旭升博客主页
     </title>
@@ -179,7 +179,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Redis</span>
+                <span class="title-hover-animation">接口文档技术</span>
             </div>
 
             
@@ -201,13 +201,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-01-15 22:26:46</span>
-        <span class="mobile">2023-01-15 22:26</span>
+        <span class="pc">2023-01-17 20:29:50</span>
+        <span class="mobile">2023-01-17 20:29</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-15 22:33:00</span>
+        <span class="pc">2023-01-17 21:42:51</span>
     </span>
     
     
@@ -217,7 +217,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>&nbsp;
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">项目开发</a>&nbsp;
                     </li>
                 
             </ul>
@@ -240,16 +240,19 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>高并发系统，不可或缺的是缓存。目前使用广泛、高效的一款开源缓存。</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
-<li>缓存（数据查询、短连接、新闻内容、商品内容等）</li>
-<li>分布式会话（session）</li>
-<li>列表</li>
-<li>任务队列（秒杀、抢购、12306等）</li>
-<li>排行榜</li>
-<li>访问统计</li>
-<li>数据过期处理（精确到毫秒）</li>
+                <h2 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h2><p>用于生成、描述和调用Restful接口的web服务。 将项目中所有接口展现在页面上，并且可以进行调用和测试服务。</p>
+<ul>
+<li>将所有接口展现在页面上，后端程序员就不需要专门为前端使用者编写专门的接口文档。</li>
+<li>接口更新后直接修改代码中的Swagger描述就可以生成新文档了。</li>
+<li>通过页面可以直接进行接口调用、降低了开发阶段的调试成本。</li>
 </ul>
+<p>SpringFox对应Swagger 就像Spring中的IoC对DI 前者是思想、后者是实现。</p>
+<h2 id="Knife4j"><a href="#Knife4j" class="headerlink" title="Knife4j"></a>Knife4j</h2><p>为MVC框架集成Swagger生成API文档的增强解决方案。</p>
+<ul>
+<li>专注于前后端代码分离、微服务架构下使用灵活。</li>
+<li>提供Swagger的增强解决方案，不同于之改善前端UI的部分。</li>
+</ul>
+<h2 id="Smart-Doc"><a href="#Smart-Doc" class="headerlink" title="Smart-Doc"></a>Smart-Doc</h2><p>Swagger在生成api文档需要在接口上添加注解等，这是一种侵入的方式。<br>smart-doc是一种非侵入的方式<br>多数情况多数人会选择Swagger + openapi技术栈。</p>
 
             </div>
 
@@ -258,16 +261,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">Redis</span>
+            <span class="type">Post title</span>：<span class="content">接口文档技术</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-01-15 22:26:46</span>
+            <span class="type">Create time</span>：<span class="content">2023-01-17 20:29:50</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/01/15/Redis/</span>
+            <span class="type">Post link</span>：<span class="content">2023/01/17/接口文档技术/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -282,7 +285,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">#中间件</a>&nbsp;
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">#项目开发</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -291,29 +294,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/01/15/Session%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">Session在开发中的使用</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/01/15/Zookeeper/"
+                               href="/2023/01/17/JPA/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Zookeeper</span>
+                                <span class="post-nav-title-item">JPA</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -332,7 +320,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Swagger"><span class="nav-number">1.</span> <span class="nav-text">Swagger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Knife4j"><span class="nav-number">2.</span> <span class="nav-text">Knife4j</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smart-Doc"><span class="nav-number">3.</span> <span class="nav-text">Smart-Doc</span></a></li></ol>
     </div>
 </div>
 
