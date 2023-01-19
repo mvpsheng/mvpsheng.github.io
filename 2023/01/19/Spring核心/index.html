@@ -9,7 +9,7 @@
     
     <title>
         
-            Tag: Spring |
+            Spring核心 |
         
         郭旭升博客主页
     </title>
@@ -90,7 +90,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/tags"
                             >
                                 TAGS
@@ -145,7 +145,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/tags">TAGS</a>
                 </li>
             
@@ -175,59 +175,176 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="tag-container">
-        <div class="tag-name"><i class="fas fa-tag"></i>&nbsp;Spring
-        </div>
-        <div class="tag-post-list">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Spring核心</span>
+            </div>
+
             
-<div class="archive-list-container">
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">郭旭升</span>
+                            
+                                <span class="author-label">Lv5</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-01-19 22:36:56</span>
+        <span class="mobile">2023-01-19 22:36</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-01-19 22:58:26</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/19/Spring%E6%A0%B8%E5%BF%83/"
-                        >Spring核心</a>
-                        <span class="article-date">01-19</span>
+                    <li>
+                        <a href="/tags/Spring/">Spring</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/11/15/Spring%E4%B8%ADBean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"
-                        >Spring中Bean的生命周期</a>
-                        <span class="article-date">11-15</span>
-                    </li>
-                
-            </ul>
-        </section>
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>非侵入</li>
+<li>控制反转</li>
+<li>依赖注入</li>
+<li>容器</li>
+<li>组件化</li>
+<li>一站式</li>
+</ul>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p>控制反转（IoC）、面向切面编程（Aop）<br>依赖注入（DI）</p>
+<h2 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h2><p>开发过程中可以根据需求有选择性地使用所需要的模块。</p>
+<ul>
+<li>Core Container （核心容器：构建其他模块建立的基础，组成：Beans、Core、Context、SpEL）<br>Bean模块： 提供框架的基础部分，包括控制反转和依赖注入。<br>Core核心模块： 封装了Spring的底层部分，包括资源访问、类型转换及一些常用工具类。</li>
+<li>Data Access&#x2F;Integration（数据访问&#x2F;集成）<br>JDBC 模块： JDBC的样例模板<br>ORM 模块<br>OXM 模块<br>JMS 模块<br>Transaction 事务模块：支持编程和声明式事务管理。</li>
+<li>Web （网络）<br>Web 模块：提供了基本的Web开发集成特性<br>Servlet 模块：提供了一个Spring MVC Web框架实现。<br>WebSocket 模块<br>Webflux 模块</li>
+<li>AOP、Aspects、Instrumentation和Messaging<br>Core container之上的是Aop、Aspects等模块。<br>Aop 模块：提供了面向切面编程实现，提供比如日志记录、权限控制、性能统计等通用功能和业务逻辑分离的技术，而且动态把这些功能添加到需要的代码中， 各司其职，降低业务逻辑和通用功能的耦合。<br>Aspects 模块： 提供了AspectJ的集成，是一个强大功能且成熟的面向切面（AOP）框架。<br>Instrumentation 模块：提供了类工具的支持和类加载器的实现，可以在特定的应用服务器中使用。<br>messaging 模块：对消息传递体系结构和协议的支持。<br>jcl 模块：对日志框架集成的模块。</li>
+<li>Test 模块<br>Spring 支持Junit和TestNG 测试框架，而且额外提供了Spring的测试功能，比如Web框架测试，模拟Http请求的功能。<br>包含 Mock Objects， TestContext Framework， Spring MVC Test, WebTestClient。</li>
+</ul>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li>
+            <span class="type">Post title</span>：<span class="content">Spring核心</span>
+        </li>
+        <li>
+            <span class="type">Post author</span>：<span class="content">郭旭升</span>
+        </li>
+        <li>
+            <span class="type">Create time</span>：<span class="content">2023-01-19 22:36:56</span>
+        </li>
+        <li class="post-link">
+            <span class="type">Post link</span>：<span class="content">2023/01/19/Spring核心/</span>
+        </li>
+        <li>
+            <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Spring/">#Spring</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/01/19/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">项目开发规范</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/01/17/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">定时任务</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
         </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">核心概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97"><span class="nav-number">3.</span> <span class="nav-text">核心模块</span></a></li></ol>
     </div>
-
-    <div class="tag-paginator">
-        <div class="paginator">
-    
-
-    
 </div>
 
+            </div>
+        
     </div>
 </div>
 
@@ -275,6 +392,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -385,6 +519,20 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+            
+<script src="/js/libs/anime.min.js"></script>
+
+        
+        
+            
+<script src="/js/toc.js"></script>
+
+        
     
 </div>
 
