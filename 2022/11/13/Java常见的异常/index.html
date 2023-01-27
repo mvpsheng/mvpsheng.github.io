@@ -207,7 +207,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-13 17:09:47</span>
+        <span class="pc">2023-01-21 12:10:01</span>
     </span>
     
     
@@ -259,6 +259,27 @@
 <li><p>throws<br>定义一个方法的时候可以用throws关键字声明。使用throws关键字声明的方法表示此方法不处理异常，而交给方法调用着进行处理。</p>
 </li>
 </ol>
+<h2 id="异常的层次结构"><a href="#异常的层次结构" class="headerlink" title="异常的层次结构"></a>异常的层次结构</h2><p>Java通过API 中Throwable类的众多子类描述各种不同的异常。Java异常都是对象，是Throwable子类的实例。</p>
+<ul>
+<li><p>Throwable<br>包含两个子类：Error(错误) 和 Exception（异常）<br>包含了线程创建时线程执行堆栈的快照，提供了printStackTrace()等接口用于获取堆栈跟踪数据等信息。</p>
+</li>
+<li><p>Error<br>Error类及其子类： 程序中无法处理的错误， 表示运行应用程序中出现了严重的错误。<br>一般表示运行时JVM出现问题。 通常由Virtual MachineError 虚拟机运行错误， NoClassDefFoundError（类定义错误）。OutOfMemoryError：内存不足错误；StackOverflow： 栈溢出错误。 此类错误发生时， JVM将终止线程。</p>
+</li>
+<li><p>Exception<br>程序本身可以捕获并且可以处理的异常。Exception分为两类：运行时异常和编译时异常。</p>
+</li>
+</ul>
+<blockquote>
+<p>运行时异常<br> RuntimeException类和其子类异常，如NullPointerException（空指针异常）、IndexOutOfBoundsException（下标越界异常），这些异常是不检查异常，程序可以选择捕获，也可以不处理。这些异常一般由程序逻辑错误引起。<br> Java编译器不会检查它， 程序中可能出现这类一场，即使没有捕获或者抛出，也会编译通过。</p>
+</blockquote>
+<blockquote>
+<p>非运行时异常(编译异常)<br>除了RuntimeException之外的异常，类型上属于Exception类及其子类。程序语法角度必须进行处理的异常，如果不处理，程序不能编译通过。如IOException、SQLException等用户自定义的Exception异常，一把情况下不自定义检查异常。</p>
+</blockquote>
+<h3 id="可查异常和不可查的异常"><a href="#可查异常和不可查的异常" class="headerlink" title="可查异常和不可查的异常"></a>可查异常和不可查的异常</h3><ul>
+<li><p>可查异常（编译器要求必须处理的异常）<br>在一定程度上它的发生是可以预计的，一旦发生，必须采取某种方式进行处理。除了RuntimeException及其子类以外，其他的Exception类及其子类都是可查异常。这类异常的特点是编译器会检查，（非运行时异常）。当程序中可能出现这类异常，要么try-catch语句捕获它，要么用throws 子句抛出它，否则编译器不通过。</p>
+</li>
+<li><p>不可查异常（编译器不要求强制处理的异常）<br>包括运行时异常（RuntimeException与其子类）和错误（Error）。</p>
+</li>
+</ul>
 
             </div>
 
@@ -341,7 +362,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">常见异常类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">异常解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">处理方法</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">常见异常类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">异常解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">处理方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">异常的层次结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E6%9F%A5%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%8D%E5%8F%AF%E6%9F%A5%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="nav-number">4.1.</span> <span class="nav-text">可查异常和不可查的异常</span></a></li></ol></li></ol>
     </div>
 </div>
 
