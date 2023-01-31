@@ -9,7 +9,7 @@
     
     <title>
         
-            最近在做什么002 |
+            HeapSort |
         
         郭旭升博客主页
     </title>
@@ -179,7 +179,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">最近在做什么002</span>
+                <span class="title-hover-animation">HeapSort</span>
             </div>
 
             
@@ -201,13 +201,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-01-29 23:39:31</span>
-        <span class="mobile">2023-01-29 23:39</span>
+        <span class="pc">2023-01-31 18:02:00</span>
+        <span class="mobile">2023-01-31 18:02</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-29 23:46:11</span>
+        <span class="pc">2023-01-31 18:21:56</span>
     </span>
     
     
@@ -217,7 +217,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%9C%80%E8%BF%91%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88/">最近在做什么</a>&nbsp;
+                        <a href="/tags/English/">English</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
                     </li>
                 
             </ul>
@@ -240,15 +244,15 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="在做什么"><a href="#在做什么" class="headerlink" title="在做什么"></a>在做什么</h2><ol>
-<li>学习设计模式思想、demo和应用场景</li>
-<li>复习算法和数据结构</li>
+                <h2 id="what"><a href="#what" class="headerlink" title="what"></a>what</h2><p>sorting using the features of MaxHeap or MinHeap(from which you can get the max or min value from the root node of the heap)</p>
+<h2 id="排序过程process-of-the-sorting"><a href="#排序过程process-of-the-sorting" class="headerlink" title="排序过程process of the sorting"></a>排序过程process of the sorting</h2><ol>
+<li>首先构建最大（小）堆，</li>
+<li>堆首和堆尾互换</li>
+<li>堆的尺寸缩小1， 调到用shift_down(0), 把新的数组顶端数据调整到响应的位置。</li>
+<li>重复2，直到堆尺寸为1.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 堆排序，先构造一个大顶堆或者小顶堆，利用构造堆，每次找到当前子数组中最大或者最小的值，完成排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sort(<span class="type">int</span>[] sourceArray) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span>[] arr = Arrays.copyOf(sourceArray, sourceArray.length);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> arr.length;</span><br><span class="line"></span><br><span class="line">        buildMaxHeap(arr, len);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> len - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            swap(arr, <span class="number">0</span>, i);</span><br><span class="line">            len--;</span><br><span class="line"><span class="comment">//            System.out.println(Arrays.toString(arr));</span></span><br><span class="line">            heapify(arr, <span class="number">0</span>, len);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>前一段时间一直在研究做项目，感觉重复很多CURD就是不断的积累一些小的设计思路和技巧，需要精进自己的设计思想和算法与数据结构的使用。所以这段时间开始加强这方面。</p>
-<h2 id="感想与收获"><a href="#感想与收获" class="headerlink" title="感想与收获"></a>感想与收获</h2><ul>
-<li>一个很好的学习新语言基础语法的方式就是用这个语言来刷题。</li>
-</ul>
-
+<h2 id="构建堆原理与方法"><a href="#构建堆原理与方法" class="headerlink" title="构建堆原理与方法"></a>构建堆原理与方法</h2><p>利用堆的特性，数组中元素下标i，可以找到它的左右子节点的下标为i * 2 + 1 和 i * 2 + 2。<br>从数组的中间索引开始，递减的顺序，计算找到左右子节点的位置，然后对比节点大小，转换成符合条件的状态（大顶堆，就让左右节点中最大的值替换为当前节点，小顶堆相反）。如果发生了替换，就递归向下将替换下去的这个节点再对比左右节点做这个堆化的操作。 因为这个堆化的过程顺序是从初始数组的中间索引开始的，也就是其左右子树已经是最底层的叶子节点。所以按照这个顺序来堆化，就保证了整棵树可以完全的堆化成符合条件（大顶堆，左右子节点小于当前节点，小顶堆相反）的样子。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法名： 构建最大堆</span></span><br><span class="line"><span class="comment">     * 功能： 从中间节点开始扫描，这样就可以保证数组中所有的元素都参与判断了一遍，而且是从堆的最底部开始判断</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">buildMaxHeap</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> len)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> (<span class="type">int</span>) Math.floor(len / <span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            heapify(arr, i, len);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  方法名： 堆化</span></span><br><span class="line"><span class="comment">     *  功能： 将当前节点作为根节点进行堆化，不断的递归进行， 将当前</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">heapify</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> i, <span class="type">int</span> len)</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        System.out.println(Arrays.toString(arr) + &quot; 进入堆化&quot; );</span></span><br><span class="line"><span class="comment">//      寻找当前节点的左右子节点，因为是最大堆，所以要让当前节点i的值最大</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">2</span> * i + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> <span class="number">2</span> * i + <span class="number">2</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">largest</span> <span class="operator">=</span> i;</span><br><span class="line"><span class="comment">//        System.out.println(&quot;当前节点为 &quot; + arr[i]);</span></span><br><span class="line"><span class="comment">//        if (left &lt; arr.length &amp;&amp; right &lt; arr.length) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;当前节点左节点为 &quot; + arr[left]);</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;当前节点右节点为 &quot; + arr[right]);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        判断如果左右节点如果比当前节点值大，就交换</span></span><br><span class="line">        <span class="keyword">if</span> (left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</span><br><span class="line">            largest = left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</span><br><span class="line">            largest = right;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//       如果发生了交换，那么将该节点的交换过的这个节点在进行堆化，递归的进行下去</span></span><br><span class="line">        <span class="keyword">if</span> (largest != i) &#123;</span><br><span class="line"><span class="comment">//            if (largest == left) &#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(Arrays.toString(arr) + &quot; 交换了左节点&quot;);</span></span><br><span class="line"><span class="comment">//            &#125; else &#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(Arrays.toString(arr) + &quot; 交换了右节点&quot;);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            swap(arr, i, largest);</span><br><span class="line"></span><br><span class="line">            heapify(arr, largest, len);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        System.out.println(Arrays.toString(arr) + &quot; 完成堆化&quot;);</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
             </div>
 
             
@@ -256,16 +260,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">最近在做什么002</span>
+            <span class="type">Post title</span>：<span class="content">HeapSort</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-01-29 23:39:31</span>
+            <span class="type">Create time</span>：<span class="content">2023-01-31 18:02:00</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/01/29/最近在做什么002/</span>
+            <span class="type">Post link</span>：<span class="content">2023/01/31/堆排序算法/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -280,7 +284,11 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%9C%80%E8%BF%91%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88/">#最近在做什么</a>&nbsp;
+                            <a href="/tags/English/">#English</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -289,29 +297,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/01/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">MergeSort</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/01/27/Chinese-lunar-new-Year/"
+                               href="/2023/01/31/git%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Chinese lunar new Year</span>
+                                <span class="post-nav-title-item">git使用问题</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -330,7 +323,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">在做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#why"><span class="nav-number">2.</span> <span class="nav-text">why</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E6%94%B6%E8%8E%B7"><span class="nav-number">3.</span> <span class="nav-text">感想与收获</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#what"><span class="nav-number">1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E8%BF%87%E7%A8%8Bprocess-of-the-sorting"><span class="nav-number">2.</span> <span class="nav-text">排序过程process of the sorting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%A0%86%E5%8E%9F%E7%90%86%E4%B8%8E%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">构建堆原理与方法</span></a></li></ol>
     </div>
 </div>
 
