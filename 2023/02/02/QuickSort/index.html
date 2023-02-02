@@ -9,7 +9,7 @@
     
     <title>
         
-            设计模式之单例 |
+            QuickSort |
         
         郭旭升博客主页
     </title>
@@ -179,7 +179,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">设计模式之单例</span>
+                <span class="title-hover-animation">QuickSort</span>
             </div>
 
             
@@ -201,16 +201,31 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-02-01 19:12:13</span>
-        <span class="mobile">2023-02-01 19:12</span>
+        <span class="pc">2023-02-02 10:44:31</span>
+        <span class="mobile">2023-02-02 10:44</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-01 19:12:13</span>
+        <span class="pc">2023-02-02 11:01:48</span>
     </span>
     
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/English/">English</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -229,7 +244,13 @@
             
 
             <div class="article-content keep-markdown-body">
-                
+                <h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>找到一个基准，将要排序的数据分成两部分， 一部分比另一部分所有元素都小。 然后按照这个方式递归的对这两部分数据进行快速排序。</p>
+<h2 id="排序过程"><a href="#排序过程" class="headerlink" title="排序过程"></a>排序过程</h2><ol>
+<li>从数列中找一个基准</li>
+<li>从右往左找到小于基准的值，替换掉i（对应的值），从左往右找到大于基准的值，替换掉j，重复，直到 i &gt;&#x3D; j，用基准替换这个i；这个过程完成之后，基准位于中间位置。</li>
+<li>递归的把基准前后的子序列进行排序。</li>
+</ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">		<span class="type">int</span> i, j, x;</span><br><span class="line">		i = l;</span><br><span class="line">		j = r;</span><br><span class="line">		x = a[i];</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">		<span class="comment">// 从右往左找到不大于x的</span></span><br><span class="line">			<span class="keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt; x) </span><br><span class="line">				j--;</span><br><span class="line">			<span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">				a[i++] = a[j];</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="comment">// 从左往右找到不小于x的</span></span><br><span class="line">			<span class="keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt; x)</span><br><span class="line">				i++;</span><br><span class="line">			<span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">				a[j--] = a[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		a[i] = x;</span><br><span class="line">		quickSort(a, l, i - <span class="number">1</span>); <span class="comment">//递归排序基准左边</span></span><br><span class="line">		quickSort(a, i + <span class="number">1</span>, r); <span class="comment">//递归排序基准右边</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             </div>
 
             
@@ -237,16 +258,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">设计模式之单例</span>
+            <span class="type">Post title</span>：<span class="content">QuickSort</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-02-01 19:12:13</span>
+            <span class="type">Create time</span>：<span class="content">2023-02-02 10:44:31</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/02/01/设计模式之单例/</span>
+            <span class="type">Post link</span>：<span class="content">2023/02/02/QuickSort/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -258,33 +279,30 @@
             
 
             
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/English/">#English</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
 
             
                 <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/02/02/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%92%8C%E5%B9%B3%E5%8F%B0/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">常用软件和平台</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
                     
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/02/01/%E6%88%91%E6%AD%A3%E5%9C%A8%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE/"
+                               href="/2023/02/02/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%92%8C%E5%B9%B3%E5%8F%B0/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">我正在做的项目</span>
+                                <span class="post-nav-title-item">常用软件和平台</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -303,7 +321,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">排序过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li></ol>
     </div>
 </div>
 
