@@ -207,7 +207,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-08 18:39:45</span>
+        <span class="pc">2023-02-09 13:25:42</span>
     </span>
     
     
@@ -245,7 +245,13 @@
 <li>语言特性</li>
 <li>web框架</li>
 </ol>
-<h2 id="目前阶段"><a href="#目前阶段" class="headerlink" title="目前阶段"></a>目前阶段</h2><p>语言基础</p>
+<h2 id="目前已完成"><a href="#目前已完成" class="headerlink" title="目前已完成"></a>目前已完成</h2><ol>
+<li>语言基础 和 js相同 完成</li>
+<li>语言特性 基本了解完成</li>
+<li>web框架- Express 基本了解</li>
+</ol>
+<h2 id="正在进行"><a href="#正在进行" class="headerlink" title="正在进行"></a>正在进行</h2><p>Express web开发实战<br>RestAPI、JXcore打包，集成数据库MySQL和Mongo。</p>
+<h2 id="后续阶段"><a href="#后续阶段" class="headerlink" title="后续阶段"></a>后续阶段</h2><p>多线程</p>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>菜鸟教程<br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-callback.html" >https://www.runoob.com/nodejs/nodejs-callback.html<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
@@ -262,6 +268,26 @@
 <li>打印</li>
 <li>循环</li>
 </ul>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>所有异步I&#x2F;O操作完成时，都会发送一个事件到事件队列。<br> 所有事件的对象都是EventEmitter的实例。<br>EventEmitter 提供了多个属性，on 来绑定事件函数，emit用于触发一个事件。</p>
+<h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p>JS没有二进制数据类型，node中定义了Buffer类，用来存放二进制数据的缓存区。可以用来处理TCP流和文件流。</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><h2 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h2><p>__filename<br>__dirname<br>setTimeout(cb, ms); 多少毫秒之后执行函数<br>clearTimeout(t) t是定时器， 用于停止定时器<br>setInterval(cb, ms)  指定毫秒之后执行指定函数，会不断的执行，知道clearInterval()调用，或者窗口关闭。</p>
+<h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><p>util是Node.js常用工具，用于弥补js的功能不足。<br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-util.html" >https://www.runoob.com/nodejs/nodejs-util.html<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>node文件系统模块中的方法都有异步和同步版本。类似UNIX标准的文件操作API。</p>
+<h2 id="工具模块"><a href="#工具模块" class="headerlink" title="工具模块"></a>工具模块</h2><ul>
+<li>OS模块 操作系统函数</li>
+<li>Path模块 处理和转换文件路径的工具</li>
+<li>Net模块 底层的网络通信</li>
+<li>DNS模块 用于解析域名</li>
+<li>Domain 模块 简化异步代码的异常处理， 捕捉处理try catch无法捕捉的异常。</li>
+</ul>
+<h2 id="WEB-模块"><a href="#WEB-模块" class="headerlink" title="WEB 模块"></a>WEB 模块</h2><p>web服务器基本功能提供web信息浏览服务。 Node 提供了http模块，用于搭建HTTP服务器和客户端。<br>用来编写服务器和客户端请求。</p>
+<h2 id="Express-框架"><a href="#Express-框架" class="headerlink" title="Express 框架"></a>Express 框架</h2><p>强大的特性创建各种web应用，丰富的HTTP工具。使用Express可以快速地搭建一个完整功能的网站。<br>核心：</p>
+<ul>
+<li>可以设置中间件来响应HTTP请求。</li>
+<li>定义了路由表用于执行不同的http请求。</li>
+<li>可以通过模板传递参数来动态渲染HTML页面。<br>更多使用细节：<br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-express-framework.html" >https://www.runoob.com/nodejs/nodejs-express-framework.html<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在学习了JS基本语法之后，学习Node.js比较丝滑，看完了菜鸟教程的基础教学，蠢蠢欲动，实战一下。感谢菜鸟教程。</p>
 
             </div>
 
@@ -344,7 +370,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84"><span class="nav-number">1.</span> <span class="nav-text">学习路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E9%98%B6%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">目前阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node%E5%BA%94%E7%94%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">4.</span> <span class="nav-text">node应用的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">5.</span> <span class="nav-text">NPM 包管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REPL-%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%A7%A3%E9%87%8A%E5%99%A8%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">REPL(交互式解释器）</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84"><span class="nav-number">1.</span> <span class="nav-text">学习路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E5%B7%B2%E5%AE%8C%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">目前已完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%9C%A8%E8%BF%9B%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">正在进行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E9%98%B6%E6%AE%B5"><span class="nav-number">4.</span> <span class="nav-text">后续阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">5.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node%E5%BA%94%E7%94%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">6.</span> <span class="nav-text">node应用的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">7.</span> <span class="nav-text">NPM 包管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REPL-%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%A7%A3%E9%87%8A%E5%99%A8%EF%BC%89"><span class="nav-number">8.</span> <span class="nav-text">REPL(交互式解释器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-number">9.</span> <span class="nav-text">事件循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Buffer"><span class="nav-number">10.</span> <span class="nav-text">Buffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stream"><span class="nav-number">11.</span> <span class="nav-text">Stream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">12.</span> <span class="nav-text">模块系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="nav-number">13.</span> <span class="nav-text">全局对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="nav-number">14.</span> <span class="nav-text">常用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">15.</span> <span class="nav-text">文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E6%A8%A1%E5%9D%97"><span class="nav-number">16.</span> <span class="nav-text">工具模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WEB-%E6%A8%A1%E5%9D%97"><span class="nav-number">17.</span> <span class="nav-text">WEB 模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Express-%E6%A1%86%E6%9E%B6"><span class="nav-number">18.</span> <span class="nav-text">Express 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">19.</span> <span class="nav-text">总结</span></a></li></ol>
     </div>
 </div>
 
