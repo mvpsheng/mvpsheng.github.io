@@ -9,7 +9,7 @@
     
     <title>
         
-            阅读 |
+            图片上传项目 |
         
         郭旭升博客主页
     </title>
@@ -179,7 +179,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">阅读</span>
+                <span class="title-hover-animation">图片上传项目</span>
             </div>
 
             
@@ -201,13 +201,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-02-16 20:52:27</span>
-        <span class="mobile">2023-02-16 20:52</span>
+        <span class="pc">2023-02-17 12:53:49</span>
+        <span class="mobile">2023-02-17 12:53</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-16 20:56:04</span>
+        <span class="pc">2023-02-17 13:44:44</span>
     </span>
     
     
@@ -217,11 +217,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%88%91/">我</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>&nbsp;
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">项目经验</a>&nbsp;
                     </li>
                 
             </ul>
@@ -244,12 +240,22 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h2><ul>
-<li>《The passionate programmer》</li>
-<li>《Soft skills》</li>
-<li>《Designing Data-Intensive Applications》</li>
-</ul>
+                <h2 id="前端-流程"><a href="#前端-流程" class="headerlink" title="前端 流程"></a>前端 流程</h2><p>标签<input type="file"><br>通过触发事件， 获取到输入的文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> uploadForm = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.upload&#x27;</span>)</span><br><span class="line">uploadForm.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">   e.<span class="title function_">preventDefault</span>()</span><br><span class="line">   <span class="keyword">let</span> file = e.<span class="property">target</span>.<span class="property">uploadFile</span>.<span class="property">files</span>[<span class="number">0</span>]</span><br><span class="line">   <span class="comment">//formdata来保存文件</span></span><br><span class="line">   <span class="keyword">let</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>()</span><br><span class="line">   formData.<span class="title function_">append</span>(<span class="string">&#x27;file&#x27;</span>, file)</span><br><span class="line">   </span><br><span class="line">   <span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/upload_files&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">     <span class="comment">//将formdata放入请求体</span></span><br><span class="line">     <span class="attr">body</span>: formData</span><br><span class="line">   &#125;)</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.<span class="property">errors</span>) &#123;</span><br><span class="line">         <span class="title function_">alert</span>(data.<span class="property">errors</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送http的post请求</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/users&#x27;</span>, &#123;</span><br><span class="line">   <span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">   <span class="attr">headers</span>: &#123;</span><br><span class="line">      <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;application/json&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>: name,</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// do something here</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<h2 id="后端流程"><a href="#后端流程" class="headerlink" title="后端流程"></a>后端流程</h2><ul>
+<li>uploading image to a static folder in the server</li>
+<li>downloading image from server with the link</li>
+<li>display list of images<br>Java实现<br>资源：<a class="link"   target="_blank" rel="noopener" href="https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/" >https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/<i class="fas fa-external-link-alt"></i></a><br>文件处理类：MultipartFile</li>
+</ul>
+<p>Service类实现思路：</p>
+<ul>
+<li>设置接收文件路径</li>
+<li>创建文件路径</li>
+<li>保存文件</li>
+</ul>
+<p>ImageModel：<br>属性： name、URL 用这两个属性来描述一个图片。</p>
+<h2 id="项目流程"><a href="#项目流程" class="headerlink" title="项目流程"></a>项目流程</h2>
             </div>
 
             
@@ -257,16 +263,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">阅读</span>
+            <span class="type">Post title</span>：<span class="content">图片上传项目</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-02-16 20:52:27</span>
+            <span class="type">Create time</span>：<span class="content">2023-02-17 12:53:49</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/02/16/阅读/</span>
+            <span class="type">Post link</span>：<span class="content">2023/02/17/图片上传项目/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -281,11 +287,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%88%91/">#我</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6/">#读书</a>&nbsp;
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">#项目经验</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -297,13 +299,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/02/17/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE/"
+                               href="/2023/02/18/%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E9%99%8C%E7%94%9F%E7%9A%84%E5%8A%9F%E8%83%BD/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">图片上传项目</span>
+                                <span class="post-nav-title-item">如何开发一个陌生的功能</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -313,10 +315,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/02/12/%E7%94%9F%E6%B4%BB%E7%9A%84%E6%84%8F%E4%B9%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E4%BA%BA%E7%B1%BB%E7%9A%84%E6%9C%AA%E6%9D%A5%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F/"
+                               href="/2023/02/16/%E9%98%85%E8%AF%BB/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">生活的意义是什么，人类的未来在哪里？</span>
+                                <span class="post-nav-title-item">阅读</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -335,7 +337,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%A6%E5%8D%95"><span class="nav-number">1.</span> <span class="nav-text">书单</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">前端 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">后端流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">项目流程</span></a></li></ol>
     </div>
 </div>
 
