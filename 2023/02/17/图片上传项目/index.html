@@ -207,7 +207,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-17 13:44:44</span>
+        <span class="pc">2023-02-22 18:03:09</span>
     </span>
     
     
@@ -240,10 +240,48 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="前端-流程"><a href="#前端-流程" class="headerlink" title="前端 流程"></a>前端 流程</h2><p>标签<input type="file"><br>通过触发事件， 获取到输入的文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> uploadForm = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.upload&#x27;</span>)</span><br><span class="line">uploadForm.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">   e.<span class="title function_">preventDefault</span>()</span><br><span class="line">   <span class="keyword">let</span> file = e.<span class="property">target</span>.<span class="property">uploadFile</span>.<span class="property">files</span>[<span class="number">0</span>]</span><br><span class="line">   <span class="comment">//formdata来保存文件</span></span><br><span class="line">   <span class="keyword">let</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>()</span><br><span class="line">   formData.<span class="title function_">append</span>(<span class="string">&#x27;file&#x27;</span>, file)</span><br><span class="line">   </span><br><span class="line">   <span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/upload_files&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">     <span class="comment">//将formdata放入请求体</span></span><br><span class="line">     <span class="attr">body</span>: formData</span><br><span class="line">   &#125;)</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.<span class="property">errors</span>) &#123;</span><br><span class="line">         <span class="title function_">alert</span>(data.<span class="property">errors</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送http的post请求</span></span><br><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/users&#x27;</span>, &#123;</span><br><span class="line">   <span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">   <span class="attr">headers</span>: &#123;</span><br><span class="line">      <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Accept&quot;</span>: <span class="string">&quot;application/json&quot;</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>: name,</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// do something here</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="后端流程"><a href="#后端流程" class="headerlink" title="后端流程"></a>后端流程</h2><ul>
+                <h2 id="Project-Progress（Three-steps）"><a href="#Project-Progress（Three-steps）" class="headerlink" title="Project Progress（Three steps）"></a>Project Progress（Three steps）</h2><ul>
+<li>UI and function of Uploader<br>UI is done, function includes two parts:</li>
+</ul>
+<ol>
+<li>drag and drop</li>
+<li>点击上传本地文件</li>
+</ol>
+<ul>
+<li>UI 上传过程（开始上传和上传完整之前显示）</li>
+<li>UI 上传完成，展示后端响应的图片和链接待做。</li>
+</ul>
+<h2 id="Drag-and-drop-页面两个功能的实现方法"><a href="#Drag-and-drop-页面两个功能的实现方法" class="headerlink" title="Drag and drop 页面两个功能的实现方法"></a>Drag and drop 页面两个功能的实现方法</h2><ol>
+<li>将文件拖拽到浏览器并传输过程：<br><a class="link"   target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop" >https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop<i class="fas fa-external-link-alt"></i></a></li>
+<li>点击按钮打开本地文件夹，并上传文件的方法？ 如何控制上传文件的类型，如何获取上传文件的进度？<br>实现方法：<br><a class="link"   target="_blank" rel="noopener" href="http://doc.ruoyi.vip/ruoyi-vue/document/htsc.html#%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B" >http://doc.ruoyi.vip/ruoyi-vue/document/htsc.html#%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+<h2 id="前端技术点："><a href="#前端技术点：" class="headerlink" title="前端技术点："></a>前端技术点：</h2><ul>
+<li><p>文件对象的获取，Input type &#x3D; file</p>
+</li>
+<li><p>axios post请求 请求体头 ：”Content-type”: “multipart&#x2F;form-data”</p>
+</li>
+<li><p>vue路由， 文件上传时，转换到上传过程页面， 上传完成转换到上传完成页面，之后可以回到 主页上传页面。<br>这三个显示画面之间的转换，最终实现用的是组件之间的状态转换，根据上传的状态转换一个状态， 根据状态展示一个组件。</p>
+</li>
+<li><p>将子组件的值传递给父组件，利用事件触发，$emit。</p>
+</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><p>如何将子组件的属性值传递给父组件？<br>$emit</p>
+</li>
+<li><p>一个组件是否可以有两个不同的监听事件？</p>
+</li>
+</ul>
+<h2 id="前端-细节实现"><a href="#前端-细节实现" class="headerlink" title="前端 细节实现"></a>前端 细节实现</h2><ul>
+<li>标签<input type="file"></li>
+<li>通过触发事件， 获取到输入的文件</li>
+<li>通过formdata封装文件，放在请求体中，给服务端发送post请求。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> uploadForm = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.upload&#x27;</span>)</span><br><span class="line">uploadForm.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">   e.<span class="title function_">preventDefault</span>()</span><br><span class="line">   <span class="keyword">let</span> file = e.<span class="property">target</span>.<span class="property">uploadFile</span>.<span class="property">files</span>[<span class="number">0</span>]</span><br><span class="line">   <span class="comment">//formdata来保存文件</span></span><br><span class="line">   <span class="keyword">let</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>()</span><br><span class="line">   formData.<span class="title function_">append</span>(<span class="string">&#x27;file&#x27;</span>, file)</span><br><span class="line">   </span><br><span class="line">   <span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/upload_files&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">     <span class="comment">//将formdata放入请求体</span></span><br><span class="line">     <span class="attr">body</span>: formData</span><br><span class="line">   &#125;)</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.<span class="property">errors</span>) &#123;</span><br><span class="line">         <span class="title function_">alert</span>(data.<span class="property">errors</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="显示界面的变换"><a href="#显示界面的变换" class="headerlink" title="显示界面的变换"></a>显示界面的变换</h2><ol>
+<li>未选择好要发送的图片之前， 显示图片选择界面</li>
+<li>选择好开始发送，发送中，到发送完成，显示发送过程中界面</li>
+<li>收到服务端回复，显示服务端发送回来的图片URL</li>
+</ol>
+<h2 id="后端-实现细节"><a href="#后端-实现细节" class="headerlink" title="后端 实现细节"></a>后端 实现细节</h2><ul>
 <li>uploading image to a static folder in the server</li>
 <li>downloading image from server with the link</li>
 <li>display list of images<br>Java实现<br>资源：<a class="link"   target="_blank" rel="noopener" href="https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/" >https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/<i class="fas fa-external-link-alt"></i></a><br>文件处理类：MultipartFile</li>
@@ -255,7 +293,10 @@
 <li>保存文件</li>
 </ul>
 <p>ImageModel：<br>属性： name、URL 用这两个属性来描述一个图片。</p>
-<h2 id="项目流程"><a href="#项目流程" class="headerlink" title="项目流程"></a>项目流程</h2>
+<h2 id="what-i-learned"><a href="#what-i-learned" class="headerlink" title="what i learned"></a>what i learned</h2><p>This is my First time full stack project experience, first time work with Vue.<br>I learn a new frontend framework, and i build a project with it from scratch.<br>I feel pretty much a sense of accomplishment.</p>
+<p>There would be more than one solution to approach a project. New technology will make some feature easier to build, but more complexity it brings too.</p>
+<p>A long way to go, i learn some skills of Vue to build the featrues i need in my project, but there is a way more to learn to master Vue. To learn as i need, save time and high effciency.<br>Learn and Build is a good way to learn new techs, as you can’t learn everything before you start to build something.</p>
+
             </div>
 
             
@@ -337,7 +378,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">前端 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">后端流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">项目流程</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Progress%EF%BC%88Three-steps%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Project Progress（Three steps）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drag-and-drop-%E9%A1%B5%E9%9D%A2%E4%B8%A4%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">Drag and drop 页面两个功能的实现方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%82%B9%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">前端技术点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-%E7%BB%86%E8%8A%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">前端 细节实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="nav-number">6.</span> <span class="nav-text">显示界面的变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF-%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">后端 实现细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-i-learned"><span class="nav-number">8.</span> <span class="nav-text">what i learned</span></a></li></ol>
     </div>
 </div>
 
