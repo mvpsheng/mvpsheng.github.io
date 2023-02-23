@@ -207,7 +207,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-22 17:11:11</span>
+        <span class="pc">2023-02-23 08:34:57</span>
     </span>
     
     
@@ -252,11 +252,16 @@
 <li>后端需要将图片存储在数据库中，这样方便进行图片数据的操作。</li>
 </ul>
 <h3 id="功能的使用时机："><a href="#功能的使用时机：" class="headerlink" title="功能的使用时机："></a>功能的使用时机：</h3><p>打开主页时，展示图片墙。</p>
-<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>后端如何用数据库存储图片。<br>通常有两种方法：</p>
+<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul>
+<li>后端如何用数据库存储图片。<br>通常有两种方法：</li>
+</ul>
 <ol>
 <li>存储图片的路径地址，然后按照文件的路径地址来上传。</li>
 <li>存储图片，用mysql数据类型blob（二进制的数据类型）。</li>
 </ol>
+<ul>
+<li>如何返回数据？<br>前端请求照片墙， 后端返回 图片标签和图片url， 前端根据url展示图片。</li>
+</ul>
 
             </div>
 
