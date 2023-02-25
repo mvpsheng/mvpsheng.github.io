@@ -207,7 +207,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-25 17:08:13</span>
+        <span class="pc">2023-02-25 17:14:06</span>
     </span>
     
     
@@ -268,22 +268,26 @@
 </ol>
 <h3 id="功能的使用时机："><a href="#功能的使用时机：" class="headerlink" title="功能的使用时机："></a>功能的使用时机：</h3><p>打开主页时，展示图片墙。</p>
 <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><ul>
-<li>后端如何用数据库存储图片。<br>通常有两种方法：</li>
+<li>后端如何用数据库存储图片？</li>
 </ul>
 <ol>
 <li>存储图片的路径地址（URL），然后按照文件的路径地址来上传。</li>
 <li>存储图片，用mysql数据类型blob（二进制的数据类型）。</li>
+<li>OSS（阿里云对象存储服务）</li>
 </ol>
 <ul>
 <li><p>如何返回数据？<br>前端请求照片墙， 后端返回 图片标签和图片url， 前端根据url展示图片。</p>
 </li>
-<li><p>为什么不能直接用<a class="link"   target="_blank" rel="noopener" href="http://localhost:8080/uploads/%E8%AE%BE%E7%BD%AE.jpeg%E8%BF%99%E4%B8%AA%E9%93%BE%E6%8E%A5%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%8E%B7%E5%8F%96SpringBoot%E5%BA%94%E7%94%A8%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E8%B5%84%E6%BA%90%EF%BC%9F" >http://localhost:8080/uploads/%E8%AE%BE%E7%BD%AE.jpeg这个链接在浏览器中获取SpringBoot应用根目录的资源？<i class="fas fa-external-link-alt"></i></a></p>
+<li><p>为什么不能直接用<a class="link"   target="_blank" rel="noopener" href="http://localhost:8080/uploads/%E8%AE%BE%E7%BD%AE.jpeg" >http://localhost:8080/uploads/%E8%AE%BE%E7%BD%AE.jpeg<i class="fas fa-external-link-alt"></i></a> 这个链接在浏览器中获取SpringBoot应用根目录的资源？（静态资源的访问控制）</p>
 </li>
 </ul>
 <p>Spring Boot默认情况下不会将静态资源暴露出去，需要进行相应的配置才能让客户端通过链接访问静态资源。可以在application.properties或application.yml中进行相关配置。以application.properties为例，可以添加以下配置：</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置静态资源文件路径</span></span><br><span class="line"><span class="attr">spring.resources.static-locations</span>=<span class="string">classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/path/to/your/uploads/folder/</span></span><br></pre></td></tr></table></figure>
 <p>其中&#x2F;path&#x2F;to&#x2F;your&#x2F;uploads&#x2F;folder&#x2F;为存储上传图片的目录路径，需要将其替换为实际的目录路径。这个配置会将Spring Boot的静态资源路径设置为上述几个路径，同时添加上传图片的目录路径，这样Spring Boot就能够将这个路径下的静态资源暴露出去，供客户端访问了。</p>
 <p>注意，如果Spring Boot应用是以jar包形式运行的，那么由于jar包本身是不可写的，需要将上传图片的目录放在jar包之外，否则上传图片的操作可能会失败。</p>
+<ul>
+<li>图片选择存在服务端的文件夹中的话，这个文件夹的位置如何确定，这个静态资源如何控制访问权限？</li>
+</ul>
 
             </div>
 
