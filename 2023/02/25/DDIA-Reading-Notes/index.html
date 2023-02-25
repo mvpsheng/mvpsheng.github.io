@@ -9,7 +9,7 @@
     
     <title>
         
-            pursue work-life balance |
+            DDIA_Reading_Notes |
         
         郭旭升博客主页
     </title>
@@ -179,7 +179,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">pursue work-life balance</span>
+                <span class="title-hover-animation">DDIA_Reading_Notes</span>
             </div>
 
             
@@ -201,13 +201,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-02-23 18:57:32</span>
-        <span class="mobile">2023-02-23 18:57</span>
+        <span class="pc">2023-02-25 21:43:49</span>
+        <span class="mobile">2023-02-25 21:43</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-23 19:09:59</span>
+        <span class="pc">2023-02-25 21:50:29</span>
     </span>
     
     
@@ -217,11 +217,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>&nbsp;
+                        <a href="/tags/English/">English</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/English/">English</a>&nbsp;
+                        | <a href="/tags/%E9%98%85%E8%AF%BB/">阅读</a>&nbsp;
                     </li>
                 
             </ul>
@@ -244,13 +244,71 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>After i long day of working on sth, i feel exhausted. I am pursuing a work life balance. Because i am passionate, when i work on sth that make me excited, i would speed too much time on it.And i don’t feel anything else utill my body told me to rest. For a long run, i have to do so.</p>
-<h2 id="how"><a href="#how" class="headerlink" title="how"></a>how</h2><ul>
-<li><p>set goal &#x2F; deadline or a task before start to do sth<br>When you have a goal, you know what you could accomplish.<br>The deadline can tell when to stop.<br>A task that you can finish.</p>
-</li>
-<li><p>give your self reward when you do so<br>When you accomplish sth, give your self a reward, you’ll remember that sense of accomplishment;<br>When you stop at your deadline, take a break, enjoy your self with the time that you are out of your business.So that you could be more productive or energetic  in the next time.</p>
-</li>
+                <h2 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h2><ul>
+<li>2023&#x2F;02&#x2F;25<br>（How time flies!）</li>
 </ul>
+<h2 id="Structure-of-the-book"><a href="#Structure-of-the-book" class="headerlink" title="Structure of the book"></a>Structure of the book</h2><p>This book is divided into three parts.</p>
+<ul>
+<li>Part I.   Fundations of Data Systems.-discuss the fundamental ideas that underpin the design of data-intensive applications.</li>
+<li>Part II.  Distributed Data.-we move from data stored on one machine to data that is distributed across multiple machines.</li>
+<li>Part III. Derived Data.-we discuss systems that derive some datasets from other datasets.</li>
+</ul>
+<h2 id="Current-reading-progress"><a href="#Current-reading-progress" class="headerlink" title="Current reading progress"></a>Current reading progress</h2><h3 id="General-ideas-of-part-I"><a href="#General-ideas-of-part-I" class="headerlink" title="General ideas of part I"></a>General ideas of part I</h3><p>The first four chapters go through the fundamental ideas that apply to all data systems, whether running on a single machine or distributed across a cluster of<br>machines:</p>
+<ol>
+<li><p>Chapter 1 introduces the terminology and approach that we’re going to use throughout this book. It examines what we actually mean by words like reliability, scalability, and maintainability, and how we can try to achieve these goals.</p>
+</li>
+<li><p>Chapter 2 compares several different data models and query languages—the most visible distinguishing factor between databases from a developer’s point of<br>view. We will see how different models are appropriate to different situations.</p>
+</li>
+<li><p>Chapter 3 turns to the internals of storage engines and looks at how databases layout data on disk. Different storage engines are optimized for different workloads,<br>and choosing the right one can have a huge effect on performance.</p>
+</li>
+<li><p>Chapter 4 compares various formats for data encoding (serialization) and especially examines how they fare in an environment where application requirements change and schemas need to adapt over time.</p>
+</li>
+</ol>
+<h3 id="Part-I-Chapter-1"><a href="#Part-I-Chapter-1" class="headerlink" title="Part I - Chapter 1"></a>Part I - Chapter 1</h3><p>A data-intensive application is typically built from standard building blocks that pro‐<br>vide commonly needed functionality. For example, many applications need to:</p>
+<ul>
+<li>Store data so that they, or another application, can find it again later (databases)</li>
+<li>Remember the result of an expensive operation, to speed up reads (caches)</li>
+<li>Allow users to search data by keyword or filter it in various ways (search indexes)</li>
+<li>Send a message to another process, to be handled asynchronously (stream pro‐<br>cessing)</li>
+<li>Periodically crunch a large amount of accumulated data (batch processing)</li>
+</ul>
+<h4 id="Reliability"><a href="#Reliability" class="headerlink" title="Reliability"></a>Reliability</h4><p>The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or soft‐<br>ware faults, and even human error).</p>
+<p>For software, typical expectations include:</p>
+<ul>
+<li>The application performs the function that the user expected.</li>
+<li>It can tolerate the user making mistakes or using the software in unexpected ways.</li>
+<li>Its performance is good enough for the required use case, under the expected load and data volume.</li>
+<li>The system prevents any unauthorized access and abuse.</li>
+</ul>
+<h4 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h4><p>As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth.</p>
+<ul>
+<li>Main concepts:</li>
+</ul>
+<ol>
+<li><p>Describing Load :<br>Load can be described with a few numbers which we call load parameters. The best choice of parameters depends on the architecture of your system: it may be requests per second to a web<br>server, the ratio of reads to writes in a database, the number of simultaneously active users in a chat room, the hit rate on a cache, or something else. Perhaps the average<br>case is what matters for you, or perhaps your bottleneck is dominated by a small number of extreme cases.</p>
+</li>
+<li><p>Describing Performance</p>
+</li>
+</ol>
+<p>Some systems are elastic, meaning that they can automatically add computing resources when they detect a load increase, whereas other systems are scaled manually (a<br>human analyzes the capacity and decides to add more machines to the system).<br>An elastic system can be useful if load is highly unpredictable, but manually scaled systems are simpler and may have fewer operational surprises</p>
+<h4 id="Maintainability"><a href="#Maintainability" class="headerlink" title="Maintainability"></a>Maintainability</h4><p>Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new usecases), and they should all be able to work on it productively.<br>  pay particular attention to three design principles for software systems will hopefully minimize pain during maintenance, and thus avoid creating legacy software ourselves. </p>
+<ul>
+<li>Operability<br>Make it easy for operations teams to keep the system running smoothly.</li>
+<li>Simplicity<br>Make it easy for new engineers to understand the system, by removing as much complexity as possible from the system. (Note this is not the same as simplicity of the user interface.)</li>
+<li>Evolvability<br>Make it easy for engineers to make changes to the system in the future, adapting it for unanticipated use cases as requirements change. Also known as extensibility, modifiability, or plasticity.</li>
+</ul>
+<h3 id="Part-I-Chapter-2-Data-Models-and-Query-Languages"><a href="#Part-I-Chapter-2-Data-Models-and-Query-Languages" class="headerlink" title="Part I - Chapter 2 - Data Models and Query Languages"></a>Part I - Chapter 2 - Data Models and Query Languages</h3><p>The limits of my language mean the limits of my world.<br>    —Ludwig Wittgenstein, Tractatus Logico-Philosophicus (1922)<br>Can not agree more! Keep learning, language is not being a barrier!<br>Data models are perhaps the most important part of developing software, because they have such a profound effect: not only on how the software is written, but also on<br>how we think about the problem that we are solving.</p>
+<h2 id="What’s-good"><a href="#What’s-good" class="headerlink" title="What’s good?"></a>What’s good?</h2><ul>
+<li>Technology can be used for good, make underrepresented people’s voices heard, to create opportunities for everyone, and avert disasters.</li>
+<li>Fortunately, behind the rapid changes in technology, there are enduring principles<br>that remain true, no matter which version of a particular tool you are using. If you<br>understand those principles, you’re in a position to see where each tool fits in, how to<br>make good use of it, and how to avoid its pitfalls.</li>
+</ul>
+<h2 id="Q-amp-A-General-ideas-about-this-book"><a href="#Q-amp-A-General-ideas-about-this-book" class="headerlink" title="Q&amp;A(General ideas about this book!)"></a>Q&amp;A(General ideas about this book!)</h2><h3 id="What-is-Data-intensive-application"><a href="#What-is-Data-intensive-application" class="headerlink" title="What is Data-intensive application?"></a>What is Data-intensive application?</h3><p>An application data-intensive if data is its primary challenge– the quantity of data, the complexity of data, or the speed at which it is changing–as opposed to compute-intensive, where CPU cycles are the bottleneck.</p>
+<h3 id="What-will-you-learn-from-this-book"><a href="#What-will-you-learn-from-this-book" class="headerlink" title="What will you learn from this book?"></a>What will you learn from this book?</h3><p>• You want to learn how to make data systems scalable, for example, to support<br>web or mobile apps with millions of users.</p>
+<p>• You need to make applications highly available (minimizing downtime) and<br>operationally robust.</p>
+<p>• You are looking for ways of making systems easier to maintain in the long run,<br>even as they grow and as requirements and technologies change.</p>
+<p>• You have a natural curiosity for the way things work and want to know what<br>goes on inside major websites and online services. This book breaks down the<br>internals of various databases and data processing systems, and it’s great fun to<br>explore the bright thinking that went into their design.</p>
+<h3 id="Scope-of-this-book"><a href="#Scope-of-this-book" class="headerlink" title="Scope of this book?"></a>Scope of this book?</h3><p>Instead we discuss the various principles and trade-offs that are fundamental to data systems, and we explore the different design decisions taken by different products.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p> <a class="link"   target="_blank" rel="noopener" href="https://github.com/ept/ddia-references" >https://github.com/ept/ddia-references<i class="fas fa-external-link-alt"></i></a></p>
 
             </div>
 
@@ -259,16 +317,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">pursue work-life balance</span>
+            <span class="type">Post title</span>：<span class="content">DDIA_Reading_Notes</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-02-23 18:57:32</span>
+            <span class="type">Create time</span>：<span class="content">2023-02-25 21:43:49</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/02/23/pursue-work-life-balance/</span>
+            <span class="type">Post link</span>：<span class="content">2023/02/25/DDIA-Reading-Notes/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -283,11 +341,11 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%8A%80%E5%B7%A7/">#技巧</a>&nbsp;
+                            <a href="/tags/English/">#English</a>&nbsp;
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/English/">#English</a>&nbsp;
+                            <a href="/tags/%E9%98%85%E8%AF%BB/">#阅读</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -296,29 +354,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/02/25/DDIA-Reading-Notes/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">DDIA_Reading_Notes</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/02/22/myunsplash/"
+                               href="/2023/02/23/pursue-work-life-balance/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">myunsplash</span>
+                                <span class="post-nav-title-item">pursue work-life balance</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -337,7 +380,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why"><span class="nav-number">1.</span> <span class="nav-text">why</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how"><span class="nav-number">2.</span> <span class="nav-text">how</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Time"><span class="nav-number">1.</span> <span class="nav-text">Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure-of-the-book"><span class="nav-number">2.</span> <span class="nav-text">Structure of the book</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Current-reading-progress"><span class="nav-number">3.</span> <span class="nav-text">Current reading progress</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#General-ideas-of-part-I"><span class="nav-number">3.1.</span> <span class="nav-text">General ideas of part I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-I-Chapter-1"><span class="nav-number">3.2.</span> <span class="nav-text">Part I - Chapter 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reliability"><span class="nav-number">3.2.1.</span> <span class="nav-text">Reliability</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scalability"><span class="nav-number">3.2.2.</span> <span class="nav-text">Scalability</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maintainability"><span class="nav-number">3.2.3.</span> <span class="nav-text">Maintainability</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-I-Chapter-2-Data-Models-and-Query-Languages"><span class="nav-number">3.3.</span> <span class="nav-text">Part I - Chapter 2 - Data Models and Query Languages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What%E2%80%99s-good"><span class="nav-number">4.</span> <span class="nav-text">What’s good?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A-General-ideas-about-this-book"><span class="nav-number">5.</span> <span class="nav-text">Q&amp;A(General ideas about this book!)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Data-intensive-application"><span class="nav-number">5.1.</span> <span class="nav-text">What is Data-intensive application?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-will-you-learn-from-this-book"><span class="nav-number">5.2.</span> <span class="nav-text">What will you learn from this book?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scope-of-this-book"><span class="nav-number">5.3.</span> <span class="nav-text">Scope of this book?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">6.</span> <span class="nav-text">References</span></a></li></ol>
     </div>
 </div>
 
