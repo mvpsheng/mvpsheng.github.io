@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-25 17:14:06</span>
+        <span class="pc">2023-02-28 12:23:28</span>
     </span>
     
     
@@ -301,6 +301,19 @@
 <ul>
 <li>图片选择存在服务端的文件夹中的话，这个文件夹的位置如何确定，这个静态资源如何控制访问权限？</li>
 </ul>
+<h2 id="获取图片方式的选择"><a href="#获取图片方式的选择" class="headerlink" title="获取图片方式的选择"></a>获取图片方式的选择</h2><ul>
+<li>自己拼接URL</li>
+<li>通过Resouce类进行获取URL</li>
+</ul>
+<h2 id="URL生成方法"><a href="#URL生成方法" class="headerlink" title="URL生成方法"></a>URL生成方法</h2><p>This URL should contain the API endpoint base URL plus the path to the image file using the unique filename.<br>ImageURL &#x3D; API终端基础URL + 包含文件名的路径</p>
+<h2 id="为什么将图片url存在数据库？"><a href="#为什么将图片url存在数据库？" class="headerlink" title="为什么将图片url存在数据库？"></a>为什么将图片url存在数据库？</h2><p>Save images in a database and not just in a folder for frontend access.<br>Storing images in a database has the following advantages:</p>
+<ol>
+<li>Easy to query - Can fetch images using various filters like date uploaded, category, etc.</li>
+<li>Versioning - Can maintain history of changes made to an image.</li>
+<li>Additional metadata - Can store additional details about an image like title, description, tags, etc. along with the image data.</li>
+<li>Better security - Databases typically have more security mechanisms in place to prevent unauthorized access as compared to just storing files in a folder.</li>
+<li>Easier to backup and migrate - Can take backups and migrate a database more easily than just copying files from folders.</li>
+</ol>
 
             </div>
 
@@ -441,7 +454,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">用户故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">前后端仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">图片列表展示功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">前端添加图片功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%9B%BE%E7%89%87"><span class="nav-number">6.</span> <span class="nav-text">删除图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA%EF%BC%9A"><span class="nav-number">6.1.</span> <span class="nav-text">功能的使用时机：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">6.2.</span> <span class="nav-text">问题：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">用户故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">前后端仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">图片列表展示功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">前端添加图片功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%9B%BE%E7%89%87"><span class="nav-number">6.</span> <span class="nav-text">删除图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA%EF%BC%9A"><span class="nav-number">6.1.</span> <span class="nav-text">功能的使用时机：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">6.2.</span> <span class="nav-text">问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E6%96%B9%E5%BC%8F%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">7.</span> <span class="nav-text">获取图片方式的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">URL生成方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%86%E5%9B%BE%E7%89%87url%E5%AD%98%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">为什么将图片url存在数据库？</span></a></li></ol>
     </div>
 </div>
 
