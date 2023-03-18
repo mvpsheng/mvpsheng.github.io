@@ -9,7 +9,7 @@
     
     <title>
         
-            图片上传项目 |
+            HTTP请求拦截各个阶段Vue.js |
         
         郭旭升博客主页
     </title>
@@ -192,7 +192,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">图片上传项目</span>
+                <span class="title-hover-animation">HTTP请求拦截各个阶段Vue.js</span>
             </div>
 
             
@@ -214,26 +214,15 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-02-17 12:53:49</span>
-        <span class="mobile">2023-02-17 12:53</span>
+        <span class="pc">2023-03-18 20:18:34</span>
+        <span class="mobile">2023-03-18 20:18</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-16 10:04:01</span>
+        <span class="pc">2023-03-18 20:20:39</span>
     </span>
     
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">项目经验</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -241,7 +230,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">项目经验</a>&nbsp;
+                        <a href="/tags/Vue-js/">Vue.js</a>&nbsp;
                     </li>
                 
             </ul>
@@ -264,86 +253,11 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="Project-Progress（Three-steps）"><a href="#Project-Progress（Three-steps）" class="headerlink" title="Project Progress（Three steps）"></a>Project Progress（Three steps）</h2><ul>
-<li>UI and function of Uploader<br>UI is done, function includes two parts:</li>
-</ul>
-<ol>
-<li>drag and drop</li>
-<li>点击上传本地文件</li>
-</ol>
-<ul>
-<li>UI 上传过程（开始上传和上传完整之前显示）</li>
-<li>UI 上传完成，展示后端响应的图片和链接待做。</li>
-</ul>
-<h2 id="Drag-and-drop-页面两个功能的实现方法"><a href="#Drag-and-drop-页面两个功能的实现方法" class="headerlink" title="Drag and drop 页面两个功能的实现方法"></a>Drag and drop 页面两个功能的实现方法</h2><ol>
-<li>将文件拖拽到浏览器并传输过程：<br><a class="link"   target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop" >https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop<i class="fas fa-external-link-alt"></i></a></li>
-<li>点击按钮打开本地文件夹，并上传文件的方法？ 如何控制上传文件的类型，如何获取上传文件的进度？<br>实现方法：<br><a class="link"   target="_blank" rel="noopener" href="http://doc.ruoyi.vip/ruoyi-vue/document/htsc.html#%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B" >http://doc.ruoyi.vip/ruoyi-vue/document/htsc.html#%E4%B8%8A%E4%BC%A0%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-<h2 id="前端技术点："><a href="#前端技术点：" class="headerlink" title="前端技术点："></a>前端技术点：</h2><ul>
-<li><p>文件对象的获取，Input type &#x3D; file</p>
-</li>
-<li><p>axios post请求 请求体头 ：”Content-type”: “multipart&#x2F;form-data”</p>
-</li>
-<li><p>vue路由， 文件上传时，转换到上传过程页面， 上传完成转换到上传完成页面，之后可以回到 主页上传页面。<br>这三个显示画面之间的转换，最终实现用的是组件之间的状态转换，根据上传的状态转换一个状态， 根据状态展示一个组件。</p>
-</li>
-<li><p>将子组件的值传递给父组件，利用事件触发，$emit。</p>
-</li>
-</ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li><p>如何将子组件的属性值传递给父组件？<br>$emit</p>
-</li>
-<li><p>一个组件是否可以有两个不同的监听事件？</p>
-</li>
-</ul>
-<h2 id="前端-细节实现"><a href="#前端-细节实现" class="headerlink" title="前端 细节实现"></a>前端 细节实现</h2><ul>
-<li>标签<input type="file"></li>
-<li>通过触发事件， 获取到输入的文件</li>
-<li>通过formdata封装文件，放在请求体中，给服务端发送post请求。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> uploadForm = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.upload&#x27;</span>)</span><br><span class="line">uploadForm.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">   e.<span class="title function_">preventDefault</span>()</span><br><span class="line">   <span class="keyword">let</span> file = e.<span class="property">target</span>.<span class="property">uploadFile</span>.<span class="property">files</span>[<span class="number">0</span>]</span><br><span class="line">   <span class="comment">//formdata来保存文件</span></span><br><span class="line">   <span class="keyword">let</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>()</span><br><span class="line">   formData.<span class="title function_">append</span>(<span class="string">&#x27;file&#x27;</span>, file)</span><br><span class="line">   </span><br><span class="line">   <span class="title function_">fetch</span>(<span class="string">&#x27;http://localhost:3000/upload_files&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">     <span class="comment">//将formdata放入请求体</span></span><br><span class="line">     <span class="attr">body</span>: formData</span><br><span class="line">   &#125;)</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">resp</span> =&gt;</span> resp.<span class="title function_">json</span>())</span><br><span class="line">   .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (data.<span class="property">errors</span>) &#123;</span><br><span class="line">         <span class="title function_">alert</span>(data.<span class="property">errors</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="显示界面的变换"><a href="#显示界面的变换" class="headerlink" title="显示界面的变换"></a>显示界面的变换</h2><ol>
-<li>未选择好要发送的图片之前， 显示图片选择界面</li>
-<li>选择好开始发送，发送中，到发送完成，显示发送过程中界面</li>
-<li>收到服务端回复，显示服务端发送回来的图片URL</li>
-</ol>
-<h2 id="后端-实现细节"><a href="#后端-实现细节" class="headerlink" title="后端 实现细节"></a>后端 实现细节</h2><ul>
-<li>uploading image to a static folder in the server</li>
-<li>downloading image from server with the link</li>
-<li>display list of images<br>Java实现<br>资源：<a class="link"   target="_blank" rel="noopener" href="https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/" >https://www.bezkoder.com/spring-boot-image-upload-thymeleaf/<i class="fas fa-external-link-alt"></i></a><br>文件处理类：MultipartFile</li>
-</ul>
-<p>Service类实现思路：</p>
-<ul>
-<li>设置接收文件路径</li>
-<li>创建文件路径</li>
-<li>保存文件</li>
-</ul>
-<p>ImageModel：<br>属性： name、URL 用这两个属性来描述一个图片。</p>
-<h2 id="what-i-learned"><a href="#what-i-learned" class="headerlink" title="what i learned"></a>what i learned</h2><p>This is my First time full stack project experience, first time work with Vue.<br>I learn a new frontend framework, and i build a project with it from scratch.<br>I feel pretty much a sense of accomplishment.</p>
-<p>There would be more than one solution to approach a project. New technology will make some feature easier to build, but more complexity it brings too.</p>
-<p>A long way to go, i learn some skills of Vue to build the featrues i need in my project, but there is a way more to learn to master Vue. To learn as i need, save time and high effciency.<br>Learn and Build is a good way to learn new techs, as you can’t learn everything before you start to build something.</p>
-<h2 id="项目架构设计"><a href="#项目架构设计" class="headerlink" title="项目架构设计"></a>项目架构设计</h2><h3 id="组件："><a href="#组件：" class="headerlink" title="组件："></a>组件：</h3><ul>
-<li>图片上传组件</li>
-<li>图片传输过程组件</li>
-<li>图片上传完成组件</li>
-</ul>
-<h3 id="核心过程："><a href="#核心过程：" class="headerlink" title="核心过程："></a>核心过程：</h3><ol>
-<li>上传前进入上传组件。</li>
-<li>上传请求发出后，进入传输过程组件。</li>
-<li>传输请求返回后，收到response，显示图片上传完成组件。</li>
-</ol>
-<p>所以核心过程围绕着一个请求的全过程来进行组件的显示。<br>通过 v-show 即可。 v-if v-else条件判断<br>通过promise编程， 异步请求， 请求回复成功或者失败， 有状态fulfilled，得到返回体。</p>
-<h3 id="核心上传请求功能：（Post）"><a href="#核心上传请求功能：（Post）" class="headerlink" title="核心上传请求功能：（Post）"></a>核心上传请求功能：（Post）</h3><p>上传对象：</p>
-<ul>
-<li>图片</li>
-</ul>
-<p>返回对象：</p>
-<ul>
-<li>图片</li>
-<li>图片链接</li>
-</ul>
-<h2 id="前端核心技术"><a href="#前端核心技术" class="headerlink" title="前端核心技术"></a>前端核心技术</h2><ul>
-<li>异步编程</li>
-<li>promise（promise返回对象的各种状态， 开始到完成）</li>
-</ul>
+                <h2 id="axios-拦截器"><a href="#axios-拦截器" class="headerlink" title="axios 拦截器"></a>axios 拦截器</h2><p>使用axios的拦截器来获取HTTP请求的各个阶段。拦截器是一种机制，可以在HTTP请求或响应被发送或接收之前拦截它们，并对它们进行处理。在axios中，您可以使用request拦截器来获取HTTP请求的各个阶段，例如开始发送请求、已发送请求、正在等待响应、已接收响应等。</p>
+<p>下面是一个使用axios拦截器获取HTTP请求阶段的示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line">axios.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Starting request&#x27;</span>, config);</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">axios.<span class="property">interceptors</span>.<span class="property">response</span>.<span class="title function_">use</span>(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Received response&#x27;</span>, response);</span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;, <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Received error&#x27;</span>, error);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(error);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">postData</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> axios.<span class="title function_">post</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/posts&#x27;</span>, &#123;</span><br><span class="line">          <span class="attr">title</span>: <span class="string">&#x27;foo&#x27;</span>,</span><br><span class="line">          <span class="attr">body</span>: <span class="string">&#x27;bar&#x27;</span>,</span><br><span class="line">          <span class="attr">userId</span>: <span class="number">1</span>,</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Received data&#x27;</span>, response.<span class="property">data</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Caught error&#x27;</span>, error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们使用axios.interceptors.request.use()方法来定义一个request拦截器，它会在HTTP请求开始发送时被调用，并打印出请求的配置信息。我们还使用axios.interceptors.response.use()方法来定义一个response拦截器，它会在HTTP响应被接收时被调用，并打印出响应的数据。如果有错误，它将被记录在控制台中。</p>
 
             </div>
 
@@ -352,16 +266,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">图片上传项目</span>
+            <span class="type">Post title</span>：<span class="content">HTTP请求拦截各个阶段Vue.js</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-02-17 12:53:49</span>
+            <span class="type">Create time</span>：<span class="content">2023-03-18 20:18:34</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/02/17/图片上传项目/</span>
+            <span class="type">Post link</span>：<span class="content">2023/03/18/HTTP请求拦截各个阶段Vue-js/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -376,7 +290,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">#项目经验</a>&nbsp;
+                            <a href="/tags/Vue-js/">#Vue.js</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -385,29 +299,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/02/18/%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E9%99%8C%E7%94%9F%E7%9A%84%E5%8A%9F%E8%83%BD/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">如何开发一个陌生的功能</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/02/16/%E9%98%85%E8%AF%BB/"
+                               href="/2023/03/18/HTTP%E8%AF%B7%E6%B1%82Vue-js/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">阅读</span>
+                                <span class="post-nav-title-item">HTTP请求Vue.js</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -484,7 +383,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Progress%EF%BC%88Three-steps%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Project Progress（Three steps）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drag-and-drop-%E9%A1%B5%E9%9D%A2%E4%B8%A4%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">Drag and drop 页面两个功能的实现方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%82%B9%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">前端技术点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-%E7%BB%86%E8%8A%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">前端 细节实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="nav-number">6.</span> <span class="nav-text">显示界面的变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF-%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="nav-number">7.</span> <span class="nav-text">后端 实现细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-i-learned"><span class="nav-number">8.</span> <span class="nav-text">what i learned</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">9.</span> <span class="nav-text">项目架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%EF%BC%9A"><span class="nav-number">9.1.</span> <span class="nav-text">组件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">9.2.</span> <span class="nav-text">核心过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%B8%8A%E4%BC%A0%E8%AF%B7%E6%B1%82%E5%8A%9F%E8%83%BD%EF%BC%9A%EF%BC%88Post%EF%BC%89"><span class="nav-number">9.3.</span> <span class="nav-text">核心上传请求功能：（Post）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF"><span class="nav-number">10.</span> <span class="nav-text">前端核心技术</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#axios-%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">axios 拦截器</span></a></li></ol>
     </div>
 </div>
 
