@@ -9,7 +9,7 @@
     
     <title>
         
-            myunsplash |
+            travel-tracks |
         
         郭旭升博客主页
     </title>
@@ -192,7 +192,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">myunsplash</span>
+                <span class="title-hover-animation">travel-tracks</span>
             </div>
 
             
@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-02-28 12:23:28</span>
+        <span class="pc">2023-03-20 12:40:39</span>
     </span>
     
     
@@ -314,6 +314,30 @@
 <li>Better security - Databases typically have more security mechanisms in place to prevent unauthorized access as compared to just storing files in a folder.</li>
 <li>Easier to backup and migrate - Can take backups and migrate a database more easily than just copying files from folders.</li>
 </ol>
+<h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><ul>
+<li><p>首页<br>固定的头部（随着用户对页面进行下滑头部栏是固定的） - 搜索框、 添加&#x2F;上传按钮<br>内容 - 展示当前所有图片</p>
+</li>
+<li><p>添加上传页面 （点击上传按钮时进入上传页面，进行图片上传流程）</p>
+</li>
+<li><p>编辑和查看图片故事（之后附加）</p>
+</li>
+</ul>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><ol>
+<li>主页打开调用get请求，获取图片对象数据， for循环加载图片。</li>
+<li>在主页的add按钮路由切换到 imageuploader模块，进行添加图片操作，添加完成之后，点击其他部分可以返回主页。</li>
+<li>删除模块</li>
+<li>查询功能 - 查询之后进行筛选（展示特性的图片）</li>
+</ol>
+<h2 id="请求接口"><a href="#请求接口" class="headerlink" title="请求接口"></a>请求接口</h2><ul>
+<li>获取全部图片 </li>
+<li>上传图片 </li>
+<li>删除图片</li>
+<li>按label查询图片</li>
+</ul>
+<h2 id="实现难点"><a href="#实现难点" class="headerlink" title="实现难点"></a>实现难点</h2><ul>
+<li>这个add按钮功能实现 通过添加另外一个页面还是切换加载模块，怎样的的路由实现思路（路由转换到其他模块，或者调用别的项目）？</li>
+<li>删除模块， hover的时候展示一个操作框，可以进行删除。</li>
+</ul>
 
             </div>
 
@@ -322,7 +346,7 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">myunsplash</span>
+            <span class="type">Post title</span>：<span class="content">travel-tracks</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
@@ -454,7 +478,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">用户故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">前后端仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">图片列表展示功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">前端添加图片功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%9B%BE%E7%89%87"><span class="nav-number">6.</span> <span class="nav-text">删除图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA%EF%BC%9A"><span class="nav-number">6.1.</span> <span class="nav-text">功能的使用时机：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">6.2.</span> <span class="nav-text">问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E6%96%B9%E5%BC%8F%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">7.</span> <span class="nav-text">获取图片方式的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">URL生成方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%86%E5%9B%BE%E7%89%87url%E5%AD%98%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">为什么将图片url存在数据库？</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">用户故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">前后端仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">图片列表展示功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">前端添加图片功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%9B%BE%E7%89%87"><span class="nav-number">6.</span> <span class="nav-text">删除图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA%EF%BC%9A"><span class="nav-number">6.1.</span> <span class="nav-text">功能的使用时机：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">6.2.</span> <span class="nav-text">问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E6%96%B9%E5%BC%8F%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">7.</span> <span class="nav-text">获取图片方式的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">URL生成方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%86%E5%9B%BE%E7%89%87url%E5%AD%98%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">为什么将图片url存在数据库？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="nav-number">10.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">11.</span> <span class="nav-text">实现过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%8E%A5%E5%8F%A3"><span class="nav-number">12.</span> <span class="nav-text">请求接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%9A%BE%E7%82%B9"><span class="nav-number">13.</span> <span class="nav-text">实现难点</span></a></li></ol>
     </div>
 </div>
 
