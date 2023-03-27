@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-16 10:04:01</span>
+        <span class="pc">2023-03-20 12:50:42</span>
     </span>
     
     
@@ -327,8 +327,8 @@
 </ul>
 <h3 id="核心过程："><a href="#核心过程：" class="headerlink" title="核心过程："></a>核心过程：</h3><ol>
 <li>上传前进入上传组件。</li>
-<li>上传请求发出后，进入传输过程组件。</li>
-<li>传输请求返回后，收到response，显示图片上传完成组件。</li>
+<li>上传请求发出后，进入传输过程组件。（利用axios.interceptors.request.use 拦截器获取请求开始状态，触发事件开始）</li>
+<li>传输请求返回后，收到response，显示图片上传完成组件。（利用axios.interceptors.response.use 拦截器获取响应状态，触发事件完成）</li>
 </ol>
 <p>所以核心过程围绕着一个请求的全过程来进行组件的显示。<br>通过 v-show 即可。 v-if v-else条件判断<br>通过promise编程， 异步请求， 请求回复成功或者失败， 有状态fulfilled，得到返回体。</p>
 <h3 id="核心上传请求功能：（Post）"><a href="#核心上传请求功能：（Post）" class="headerlink" title="核心上传请求功能：（Post）"></a>核心上传请求功能：（Post）</h3><p>上传对象：</p>
