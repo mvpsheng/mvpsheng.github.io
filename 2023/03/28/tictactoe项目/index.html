@@ -9,7 +9,7 @@
     
     <title>
         
-            TypeScript训练 |
+            tictactoe项目 |
         
         郭旭升博客主页
     </title>
@@ -192,7 +192,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">TypeScript训练</span>
+                <span class="title-hover-animation">tictactoe项目</span>
             </div>
 
             
@@ -214,13 +214,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-03-27 16:42:38</span>
-        <span class="mobile">2023-03-27 16:42</span>
+        <span class="pc">2023-03-28 11:05:37</span>
+        <span class="mobile">2023-03-28 11:05</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-27 16:45:23</span>
+        <span class="pc">2023-03-28 13:12:52</span>
     </span>
     
     
@@ -230,7 +230,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Tech%E8%AE%AD%E7%BB%83/">Tech训练</a>&nbsp;
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">项目经验</a>&nbsp;
                     </li>
                 
             </ul>
@@ -253,26 +253,60 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li><p>TypeScript-React-Starter：这是一个TypeScript和React的入门项目，提供了一个简单的Todo应用程序，可以帮助您了解如何使用TypeScript和React构建应用程序。</p>
+                <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>一个互动的井字棋游戏</p>
+<h2 id="concepts（React）"><a href="#concepts（React）" class="headerlink" title="concepts（React）"></a>concepts（React）</h2><p>elements, components, props, and state</p>
+<h2 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h2><ul>
+<li><p>what  is a component?<br>  In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. </p>
 </li>
-<li><p>TypeScript-Node-Starter：这是一个TypeScript和Node.js的入门项目，提供了一个简单的Express应用程序，可以帮助您了解如何使用TypeScript和Node.js构建Web应用程序。</p>
+<li><p>key word:<br>export: The export JavaScript keyword makes this function accessible outside of this file.<br>default: The default keyword tells other files using your code that it’s the main function in your file.<br>return: The return JavaScript keyword means whatever comes after is returned as a value to the caller of the function.</p>
 </li>
-<li><p>TypeScript-Webpack-Starter：这是一个TypeScript和Webpack的入门项目，提供了一个简单的Webpack配置文件，可以帮助您了解如何使用TypeScript和Webpack构建应用程序。</p>
+<li><p>what is a JSX element?<br>  A JSX element is a combination of JavaScript code and HTML tags that describes what you’d like to display.</p>
+</li>
+<li><p>what can be return in React components?<br>React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use fragments (&lt;&gt; and &lt;&#x2F;&gt;) to wrap multiple adjacent JSX elements</p>
 </li>
 </ul>
-<h2 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h2><h2 id="10-Step-process"><a href="#10-Step-process" class="headerlink" title="10 Step process"></a>10 Step process</h2><ol>
-<li>Get the big picture<br>Do basic research on the topic</li>
-<li>Determine scope<br>Determine what exactly you want to learn</li>
-<li>Define success<br>Come up with a clear and concise success criteria</li>
-<li>Find resources<br>Fine as much resources as possible for learning</li>
-<li>Create a Learning plan<br>Find the correct path for learning</li>
-<li>Filter resources<br>Figure out which resources are better for learning</li>
-<li>Learning enough to get started<br>Get just enough information such as ‘Hello World’ program</li>
-<li>Play around<br>Play and experiment on your own</li>
-<li>Learn enough to do something useful<br>Learn about your module in depth</li>
-<li>Teach<br>Teach what you learned</li>
+<h2 id="passing-value-through-props"><a href="#passing-value-through-props" class="headerlink" title="passing value through props"></a>passing value through props</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Square</span> value=<span class="string">&quot;1&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Square</span>(<span class="params">&#123; value &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">className</span>=<span class="string">&quot;square&quot;</span>&gt;</span>&#123;value&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="state-to-remember"><a href="#state-to-remember" class="headerlink" title="state to remember"></a>state to remember</h2><p>To “remember” things, components use state.<br>React provides a special function called useState that you can call from your component to let it “remember” things.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Square</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = <span class="title function_">useState</span>(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>add a new line at the start of the <code>Square</code> that calls <code>useState</code>. Have it return a state variable called value<br>value stores the value and setValue is a function that can be used to change the value.<br>The null passed to useState is used as the initial value for this state variable, so value here starts off equal to null.</p>
+<p>Each Square has its own state: the <code>value</code> stored in each Square is completely independent of the others. When you call a <code>set</code> function in a component, React automatically updates the child components inside too.</p>
+<h2 id="manage-the-states-of-mutible-children"><a href="#manage-the-states-of-mutible-children" class="headerlink" title="manage the states of mutible children"></a>manage the states of mutible children</h2><p>To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.</p>
+<p>Lifting state into a parent component is common when React components are refactored.</p>
+<h2 id="Immutability"><a href="#Immutability" class="headerlink" title="Immutability"></a>Immutability</h2><ul>
+<li><p>Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.</p>
+</li>
+<li><p>Immutability makes it very cheap for components to compare whether their data has changed or not. You can learn more about how React chooses when to re-render a component in the memo API reference.(<a class="link"   target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/reference/react/memo" >https://zh-hans.reactjs.org/reference/react/memo<i class="fas fa-external-link-alt"></i></a>)</p>
+</li>
+</ul>
+<h2 id="Taking-turns"><a href="#Taking-turns" class="headerlink" title="Taking turns"></a>Taking turns</h2><p>Let’s keep track of this by adding another piece of state.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Board</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [xIsNext, setXIsNext] = <span class="title function_">useState</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">const</span> [squares, setSquares] = <span class="title function_">useState</span>(<span class="title class_">Array</span>(<span class="number">9</span>).<span class="title function_">fill</span>(<span class="literal">null</span>));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Adding-time-travel"><a href="#Adding-time-travel" class="headerlink" title="Adding time travel"></a>Adding time travel</h2><ol>
+<li>store the history</li>
+<li>Lifting state up, again  - write a new top-level component called Game to display a list of past moves. That’s where you will place the history state that contains the entire game history.</li>
 </ol>
+<p>This gives the Game component full control over the Board’s data and lets it instruct the Board to render previous turns from the history.<br>3. add a key<br>each past move has a unique ID associated with it: it’s the sequential number of the move. Moves will never be re-ordered, deleted, or inserted in the middle, so it’s safe to use the move index as a key.</p>
+<h2 id="key-in-components"><a href="#key-in-components" class="headerlink" title="key in components"></a>key in components</h2><p>When a list is re-rendered, React takes each list item’s key and searches the previous list’s items for a matching key. If the current list has a key that didn’t exist before, React creates a component. If the current list is missing a key that existed in the previous list, React destroys the previous component. If two keys match, the corresponding component is moved.</p>
+<p>Keys tell React about the identity of each component, which allows React to maintain state between re-renders. If a component’s key changes, the component will be destroyed and re-created with a new state.</p>
+<p>key is a special and reserved property in React. When an element is created, React extracts the key property and stores the key directly on the returned element. Even though key may look like it is passed as props, React automatically uses key to decide which components to update. There’s no way for a component to ask what key its parent specified.</p>
+<p>It’s strongly recommended that you assign proper keys whenever you build dynamic lists. If you don’t have an appropriate key, you may want to consider restructuring your data so that you do.</p>
+<p>If no key is specified, React will report an error and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list’s items or inserting&#x2F;removing list items. Explicitly passing key&#x3D;{i} silences the error but has the same problems as array indices and is not recommended in most cases.</p>
+<p>Keys do not need to be globally unique; they only need to be unique between components and their siblings.</p>
+<h2 id="achivement-now"><a href="#achivement-now" class="headerlink" title="achivement now"></a>achivement now</h2><ul>
+<li>Lets you play tic-tac-toe,</li>
+<li>Indicates when a player has won the game,</li>
+<li>Stores a game’s history as a game progresses,</li>
+<li>Allows players to review a game’s history and see previous versions of a game’s board.</li>
+</ul>
+<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><ul>
+<li>For the current move only, show “You are at move #…” instead of a button.</li>
+<li>Rewrite Board to use two loops to make the squares instead of hardcoding them.</li>
+<li>Add a toggle button that lets you sort the moves in either ascending or descending order.</li>
+<li>When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).</li>
+<li>Display the location for each move in the format (row, col) in the move history list.</li>
+</ul>
 
             </div>
 
@@ -281,16 +315,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">TypeScript训练</span>
+            <span class="type">Post title</span>：<span class="content">tictactoe项目</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-03-27 16:42:38</span>
+            <span class="type">Create time</span>：<span class="content">2023-03-28 11:05:37</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/03/27/TypeScript训练/</span>
+            <span class="type">Post link</span>：<span class="content">2023/03/28/tictactoe项目/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -305,7 +339,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Tech%E8%AE%AD%E7%BB%83/">#Tech训练</a>&nbsp;
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/">#项目经验</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -314,29 +348,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/03/27/TechTrainingSummary/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">TechTrainingSummary</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/03/27/Soft-Skill-notes-Learning/"
+                               href="/2023/03/27/TechTree%E9%A1%B9%E7%9B%AE/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Soft Skill notes Learning</span>
+                                <span class="post-nav-title-item">TechTree项目</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -413,7 +432,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">学习方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Step-process"><span class="nav-number">3.</span> <span class="nav-text">10 Step process</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concepts%EF%BC%88React%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">concepts（React）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">技术点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#passing-value-through-props"><span class="nav-number">4.</span> <span class="nav-text">passing value through props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#state-to-remember"><span class="nav-number">5.</span> <span class="nav-text">state to remember</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#manage-the-states-of-mutible-children"><span class="nav-number">6.</span> <span class="nav-text">manage the states of mutible children</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Immutability"><span class="nav-number">7.</span> <span class="nav-text">Immutability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Taking-turns"><span class="nav-number">8.</span> <span class="nav-text">Taking turns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-time-travel"><span class="nav-number">9.</span> <span class="nav-text">Adding time travel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#key-in-components"><span class="nav-number">10.</span> <span class="nav-text">key in components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#achivement-now"><span class="nav-number">11.</span> <span class="nav-text">achivement now</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-steps"><span class="nav-number">12.</span> <span class="nav-text">Next steps</span></a></li></ol>
     </div>
 </div>
 
