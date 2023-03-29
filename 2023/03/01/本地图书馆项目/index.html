@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-03-13 17:16:40</span>
+        <span class="pc">2023-03-28 17:37:39</span>
     </span>
     
     
@@ -264,7 +264,34 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><a class="link"   target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website" >https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website<i class="fas fa-external-link-alt"></i></a><br>通过构建项目的过程学习express框架核心知识以及项目架构，也学习了web开发到部署的流程。</p>
+                <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>为一家小型本地图书馆提供线上图书编目而建，</li>
+<li>用户可以能够浏览馆藏书目，还能管理自己的帐号。</li>
+</ul>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/mvpsheng/library.git" >https://github.com/mvpsheng/library.git<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p><a class="link"   target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website" >https://developer.mozilla.org/zh-CN/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website<i class="fas fa-external-link-alt"></i></a><br>通过构建项目的过程学习express框架核心知识以及项目架构，也学习了web开发到部署的流程。</p>
+<h2 id="技术点总结"><a href="#技术点总结" class="headerlink" title="技术点总结"></a>技术点总结</h2><ul>
+<li>使用 Express 应用生成器创建一个应用骨架。</li>
+<li>启动和停止 Node web 服务器。</li>
+<li>使用数据库存放应用数据。</li>
+<li>创建路由来处理不同信息的请求，创建模板（”视图”）来渲染 HTML 数据以在浏览器中显示。</li>
+<li>使用表单。</li>
+<li>部署应用到生产环境。</li>
+</ul>
+<h2 id="创建框架"><a href="#创建框架" class="headerlink" title="创建框架"></a>创建框架</h2><p>创建一个可添加路由、模板&#x2F;视图、和数据库调用的“骨架”站点。</p>
+<p>nodemon 是最简便的自动化工具之一，添加了这个依赖就可以不重启的情况下修改程序并展示效果。<br>在Package.json文件中添加脚本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node ./bin/www&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;devstart&quot;</span><span class="punctuation">:</span> <span class="string">&quot;nodemon ./bin/www&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>npm run devstart 这样就可以运行中使用它了。<br>现在，如果编辑项目中的任何文件，服务器将自动重启（或者可以随时使用 rs 命令来重启）。查看更新后的页面需要点击浏览器的“刷新”按钮。</p>
+<h2 id="package-json-中的脚本解析"><a href="#package-json-中的脚本解析" class="headerlink" title="package.json 中的脚本解析"></a>package.json 中的脚本解析</h2><p>“scripts” 部分，定义了一个 “start” 脚本，当运行 npm start 时会调用它来启动服务器。在脚本定义中可以看到 start 实际上运行了 “node .&#x2F;bin&#x2F;www”。还有一个 “devstart” 脚本，可以通过运行 npm run devstart 来运行 “nodemon .&#x2F;bin&#x2F;www”。</p>
+<h2 id="www文件"><a href="#www文件" class="headerlink" title="www文件"></a>www文件</h2><p>文件 &#x2F;bin&#x2F;www 是应用入口！它做的第一件事是 require() “真实”的应用入口（即项目根目录中的 app.js ），app.js 会设置并返回 express()应用对象。<br>文件的其余部分先为 app 设置端口（环境变量中的预定义值或默认值 3000），再创建一个 HTTP 服务器，然后开始监听请求，报告服务器错误和连接信息。</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>路由是一段 Express 代码，它将 HTTP 动词（GET、POST、PUT、DELETE 等）、URL 路径&#x2F;模式和处理函数三者关联起来。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="1-不用callback了，而是换成了promise的方法"><a href="#1-不用callback了，而是换成了promise的方法" class="headerlink" title="1. 不用callback了，而是换成了promise的方法"></a>1. 不用callback了，而是换成了promise的方法</h3><p>原因：<br>Promises allow you to chain multiple asynchronous operations together and handle errors in a more elegant way than callbacks.</p>
+<p>问题：<br>throw new MongooseError(‘Query.prototype.exec() no longer accepts a callback’);<br>          ^<br>MongooseError: Query.prototype.exec() no longer accepts a callback</p>
+<p>解释：<br>In previous versions of Mongoose, you could pass a callback function to the exec() method to handle the results of the query. However, in more recent versions of Mongoose, the exec() method returns a Promise instead.</p>
+<p>更改：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.<span class="property">author_list</span> = <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">Author</span>.<span class="title function_">find</span>(&#123;&#125;)</span><br><span class="line">    .<span class="title function_">sort</span>([[<span class="string">&#x27;family_name&#x27;</span>, <span class="string">&#x27;ascending&#x27;</span>]])</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">authors</span> =&gt;</span> &#123;</span><br><span class="line">      res.<span class="title function_">render</span>(<span class="string">&#x27;author_list&#x27;</span>, &#123; <span class="attr">title</span>: <span class="string">&#x27;Author List&#x27;</span>, <span class="attr">author_list</span>: authors &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">next</span>(err);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
             </div>
 
@@ -405,7 +432,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80"><span class="nav-number">2.</span> <span class="nav-text">项目地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%82%B9%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">技术点总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A1%86%E6%9E%B6"><span class="nav-number">5.</span> <span class="nav-text">创建框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json-%E4%B8%AD%E7%9A%84%E8%84%9A%E6%9C%AC%E8%A7%A3%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">package.json 中的脚本解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#www%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">www文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1"><span class="nav-number">8.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8D%E7%94%A8callback%E4%BA%86%EF%BC%8C%E8%80%8C%E6%98%AF%E6%8D%A2%E6%88%90%E4%BA%86promise%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">9.1.</span> <span class="nav-text">1. 不用callback了，而是换成了promise的方法</span></a></li></ol></li></ol>
     </div>
 </div>
 
