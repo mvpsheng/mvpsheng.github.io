@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-04-02 19:57:52</span>
+        <span class="pc">2023-04-06 13:13:44</span>
     </span>
     
     
@@ -305,6 +305,50 @@
 <h2 id="组件间传值"><a href="#组件间传值" class="headerlink" title="组件间传值"></a>组件间传值</h2><p>“lifting state up”. By moving state up, you’ve shared it between components.</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">MyApp</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">handleClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(count + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Counters that update together<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">MyButton</span> <span class="attr">count</span>=<span class="string">&#123;count&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">MyButton</span> <span class="attr">count</span>=<span class="string">&#123;count&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//The information you pass down like this is called props. Now the MyApp component contains the count state and the handleClick event handler, and passes both of them down as props to each of the buttons.</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">MyButton</span>(<span class="params">&#123; count, onClick &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      Clicked &#123;count&#125; times</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="应用软技能中的学习方法"><a href="#应用软技能中的学习方法" class="headerlink" title="应用软技能中的学习方法"></a>应用软技能中的学习方法</h2><ol>
+<li><p>基础的研究： react到底干什么的，用到什么地方<br>就是通过组件来构建用户界面的JS库。<br>JSX是React支持的语法形式，可以结合HTML和JS。</p>
+</li>
+<li><p>我学习React为了写前端界面，我觉得使用JSX来写界面挺方便的，很有趣。 两个目标，一个是让我熟练的构建自己想要的页面， 另外一个就是找相关工作。</p>
+</li>
+<li><p>Define success</p>
+</li>
+</ol>
+<ul>
+<li>对于我自己的项目就是想做什么就能做出来，这就是成功。</li>
+<li>对于找工作，可能需要考虑性能优化的问题，熟悉技术背后的原理，如组件生命周期。</li>
+</ul>
+<ol start="4">
+<li>Find Resources</li>
+</ol>
+<ul>
+<li>官网</li>
+<li>MDN</li>
+<li>Freecodecamp</li>
+</ul>
+<ol start="5">
+<li>Create a learning plan<br>（前一段时间总想这一天两天要把一个技术学完，现在看来完全不同，主要还是目的，要学会用，可能一两个小时就能上手了； 为了面试做准备需要花几天时间来研究；想要做出有深度的项目，就需要深度的理解原理和应用技巧，也需要至少几天的时间。没有计划就容易迷路，即便是做了很多事情也会迷茫。）</li>
+</ol>
+<p>第一想要的是为了找工作而去做一个项目，要有一定的深度来体现我对技术的理解和应用能力，所以对这个技术要有一定的认知广度和深度，原理和应用。 </p>
+<pre><code>寻找一些相关的简历，看看别人做的啥，掌握到什么程度了。
+相关面试题要能解答。
+最后复刻/自己做一个项目。
+</code></pre>
+<p>怎么做呢， 现在基本可以自己上手做项目了，下一步就是深入的学习，面向面试题学习，看看面试考啥，针对这些点深入学一下。<br>（React -&gt; Router -&gt; Redux）<br>6. Filter resources</p>
+<ul>
+<li>GitHub 找面经</li>
+<li>牛客面经</li>
+<li>找相关简历</li>
+</ul>
+<ol start="7">
+<li><p>Learning enough to get started</p>
+</li>
+<li></li>
+</ol>
+<h2 id="目前什么水平"><a href="#目前什么水平" class="headerlink" title="目前什么水平"></a>目前什么水平</h2><p>3月多左右开始学习React，官网的项目过了两三遍，自己做了一些修改。学习路由，还没有学习Redux。  对于应用方面的认知还不足，因为技术栈都是用来做啥的都没有了解完全。（React 全家桶有啥，React工程师技术栈一般包含啥，这些技术一般怎么用）</p>
+<h2 id="对于React认知"><a href="#对于React认知" class="headerlink" title="对于React认知"></a>对于React认知</h2><p>资源：<a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/7083155703816257544#heading-10" >https://juejin.cn/post/7083155703816257544#heading-10<i class="fas fa-external-link-alt"></i></a><br>React 用于前端组件设计，但是状态管理不方便，于是有了Redux<br>Redux也不方便，有了Redux-saga react-redux， dva</p>
+<p>react 组件库， antd</p>
+<p>NPM  很多库都是从NPM下载来的</p>
+<h2 id="我的优势"><a href="#我的优势" class="headerlink" title="我的优势"></a>我的优势</h2><p>对于我会后端， Java、Node（Express, KOA(即将要学)）、数据库，分布式原理有了解，但中间件没咋用过。</p>
 
             </div>
 
@@ -445,7 +489,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E8%B7%AF%E5%BE%84"><span class="nav-number">2.</span> <span class="nav-text">目标路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tic-tac-toe-%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">tic-tac-toe 项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">技术点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">列表渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="nav-number">6.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hooks"><span class="nav-number">7.</span> <span class="nav-text">Hooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E4%BC%A0%E5%80%BC"><span class="nav-number">8.</span> <span class="nav-text">组件间传值</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E8%B7%AF%E5%BE%84"><span class="nav-number">2.</span> <span class="nav-text">目标路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tic-tac-toe-%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">tic-tac-toe 项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">技术点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">列表渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="nav-number">6.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hooks"><span class="nav-number">7.</span> <span class="nav-text">Hooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E4%BC%A0%E5%80%BC"><span class="nav-number">8.</span> <span class="nav-text">组件间传值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%BD%AF%E6%8A%80%E8%83%BD%E4%B8%AD%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">应用软技能中的学习方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E4%BB%80%E4%B9%88%E6%B0%B4%E5%B9%B3"><span class="nav-number">10.</span> <span class="nav-text">目前什么水平</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8EReact%E8%AE%A4%E7%9F%A5"><span class="nav-number">11.</span> <span class="nav-text">对于React认知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">12.</span> <span class="nav-text">我的优势</span></a></li></ol>
     </div>
 </div>
 
