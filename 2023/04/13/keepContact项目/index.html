@@ -9,7 +9,7 @@
     
     <title>
         
-            最近在做什么005 |
+            keepContact项目 |
         
         郭旭升博客主页
     </title>
@@ -192,7 +192,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">最近在做什么005</span>
+                <span class="title-hover-animation">keepContact项目</span>
             </div>
 
             
@@ -214,13 +214,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-04-13 09:58:49</span>
-        <span class="mobile">2023-04-13 09:58</span>
+        <span class="pc">2023-04-13 18:16:40</span>
+        <span class="mobile">2023-04-13 18:16</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-04-13 10:09:06</span>
+        <span class="pc">2023-04-13 19:06:42</span>
     </span>
     
     
@@ -230,7 +230,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%9C%80%E8%BF%91%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88/">最近在做什么</a>&nbsp;
+                        <a href="/tags/React-router/">React-router</a>&nbsp;
                     </li>
                 
             </ul>
@@ -253,11 +253,22 @@
             
 
             <div class="article-content keep-markdown-body">
-                <h2 id="在做什么"><a href="#在做什么" class="headerlink" title="在做什么"></a>在做什么</h2><ol>
-<li>回头学基础CSS（栅格布局和弹性盒子）和JavaScript<br>学了Next.js，很容易构建一个前端应用，但是因为CSS不熟悉，做出来视觉效果比较差，没什么体验，所以重学CSS，提升布局和样式设计能力。</li>
-</ol>
-<h2 id="为什么写这个"><a href="#为什么写这个" class="headerlink" title="为什么写这个"></a>为什么写这个</h2><p>不知道自己要干啥，看看之前在干啥，最近在干啥，大概直到接下来要干啥。</p>
-<h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>接下来学习CSS进阶，SCSS</p>
+                <h2 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h2><p>browser router  客户端路由</p>
+<ul>
+<li><p>createBrowserRouter<br>使用 DOM History API来更新URL和管理历史堆栈。同时还允许使用 loaders, actions, fetchers等。</p>
+</li>
+<li><p>客户端路由 <Link><br>客户端路由可以不用从服务端请求一个新文件来更新URL，app可以快速的渲染新的UI。<br>Client side routing allows our app to update the URL without requesting another document from the server. Instead, the app can immediately render new UI. Let’s make it happen with <Link>.</p>
+</li>
+</ul>
+<h2 id="error-page"><a href="#error-page" class="headerlink" title="error page"></a>error page</h2><p>当渲染、加载、更改数据时抛出错误是，reactrouter都会捕捉，渲染一个错误页面。<br>Anytime your app throws an error while rendering, loading data, or performing data mutations, React Router will catch it and render an error screen.<br>可以创建自己的error page</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRouteError &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">ErrorPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> error = <span class="title function_">useRouteError</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">error</span>(error);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;error-page&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Oops!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Sorry, an unexpected error has occurred.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">i</span>&gt;</span>&#123;error.statusText || error.message&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后再main.jsx中添加这个errorpage</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="title function_">createBrowserRouter</span>([</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">    <span class="attr">element</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">Root</span> /&gt;</span></span>,</span><br><span class="line">    <span class="attr">errorElement</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">ErrorPage</span> /&gt;</span></span>,</span><br><span class="line">  &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML表单和link"><a href="#HTML表单和link" class="headerlink" title="HTML表单和link"></a>HTML表单和link</h2><p>HTML表单会触发导航，就像点击了一个链接。 区别是， 链接只会改变URL，而表单还会改变请求方法和请求体。</p>
+<p>如果没有客户端导航，浏览器会自动序列化表单数据发送请求， 要么作为post方式的请求体，或者get方式的URL搜索变量。 react router做同样的事情， 但是不会将请求发送给服务端，而是使用客户端导航，把数据发送给路由的‘action’。</p>
+<p>HTML forms actually cause a navigation in the browser, just like clicking a link. The only difference is in the request: links can only change the URL while forms can also change the request method (GET vs POST) and the request body (POST form data).</p>
+<p>Without client side routing, the browser will serialize the form’s data automatically and send it to the server as the request body for POST, and as URLSearchParams for GET. React Router does the same thing, except instead of sending the request to the server, it uses client side routing and sends it to a route action.</p>
 
             </div>
 
@@ -266,16 +277,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">Post title</span>：<span class="content">最近在做什么005</span>
+            <span class="type">Post title</span>：<span class="content">keepContact项目</span>
         </li>
         <li>
             <span class="type">Post author</span>：<span class="content">郭旭升</span>
         </li>
         <li>
-            <span class="type">Create time</span>：<span class="content">2023-04-13 09:58:49</span>
+            <span class="type">Create time</span>：<span class="content">2023-04-13 18:16:40</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>：<span class="content">2023/04/13/最近在做什么005/</span>
+            <span class="type">Post link</span>：<span class="content">2023/04/13/keepContact项目/</span>
         </li>
         <li>
             <span class="type">Copyright Notice</span>：<span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -290,7 +301,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E6%9C%80%E8%BF%91%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88/">#最近在做什么</a>&nbsp;
+                            <a href="/tags/React-router/">#React-router</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -299,29 +310,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/04/13/%E8%B7%AF%E7%94%B1%E6%96%B9%E6%A1%88/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">路由方案</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/04/12/grid%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80/"
+                               href="/2023/04/13/%E8%B7%AF%E7%94%B1%E6%96%B9%E6%A1%88/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">grid栅格布局</span>
+                                <span class="post-nav-title-item">路由方案</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -398,7 +394,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">在做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E8%BF%99%E4%B8%AA"><span class="nav-number">2.</span> <span class="nav-text">为什么写这个</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5"><span class="nav-number">3.</span> <span class="nav-text">接下来</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">技术点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-page"><span class="nav-number">2.</span> <span class="nav-text">error page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E8%A1%A8%E5%8D%95%E5%92%8Clink"><span class="nav-number">3.</span> <span class="nav-text">HTML表单和link</span></a></li></ol>
     </div>
 </div>
 
