@@ -220,7 +220,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-12 17:18:56</span>
+        <span class="pc">2023-05-24 10:10:37</span>
     </span>
     
     
@@ -242,7 +242,16 @@
             
 
             <div class="article-content keep-markdown-body">
-                
+                <h2 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h2><h2 id="项目监控"><a href="#项目监控" class="headerlink" title="项目监控"></a>项目监控</h2><p>如果您在Linux上部署了项目，您可能需要使用以下操作来监控项目：</p>
+<ol>
+<li>日志监控：在Linux上，您可以使用tail命令来实时监控日志文件，以便及时发现错误和异常。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实时监控日志文件</span></span><br><span class="line"><span class="built_in">tail</span> -f /path/to/log_file</span><br></pre></td></tr></table></figure></li>
+<li>进程监控：您可以使用ps命令来查看正在运行的进程，并使用kill命令来终止进程。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看正在运行的进程</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 终止进程</span></span><br><span class="line"><span class="built_in">kill</span> process_id</span><br></pre></td></tr></table></figure></li>
+<li>系统监控：您可以使用top命令来查看系统资源的使用情况，以便及时发现性能问题。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看系统资源的使用情况</span></span><br><span class="line">top</span><br></pre></td></tr></table></figure></li>
+<li>网络监控：您可以使用netstat命令来查看网络连接和端口的使用情况。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网络连接和端口的使用情况</span></span><br><span class="line">netstat -an</span><br></pre></td></tr></table></figure></li>
+<li>应用程序监控：如果您使用Spring Boot来开发Java应用程序，那么您可以使用Actuator来监控应用程序的运行状况。Actuator提供了许多有用的端点，如&#x2F;health、&#x2F;metrics和&#x2F;info等，可以帮助您了解应用程序的健康状况、性能指标和配置信息。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看应用程序的健康状况</span></span><br><span class="line">curl localhost:port/actuator/health</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看应用程序的性能指标</span></span><br><span class="line">curl localhost:port/actuator/metrics</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看应用程序的配置信息</span></span><br><span class="line">curl localhost:port/actuator/info</span><br></pre></td></tr></table></figure>
+这些操作只是Linux上监控项目的一些常用操作。根据您的具体需求和工作流程，您可能还需要使用其他操作和工具来监控项目</li>
+</ol>
+
             </div>
 
             
@@ -374,7 +383,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="nav-number">1.</span> <span class="nav-text">常用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%91%E6%8E%A7"><span class="nav-number">2.</span> <span class="nav-text">项目监控</span></a></li></ol>
     </div>
 </div>
 
